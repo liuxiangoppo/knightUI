@@ -125,29 +125,66 @@
 ```
 :::
 
-### 使用预先定义的样式
-组件库预先为```K-badge```组件定义了几种样式,可以方便用户直接使用。
+### 可对面板组件进行扩展
+可在面板标题区域左侧进行功能扩展
 
 <div class="demo-block">
-  <ul class="temp-list">
-    <li>普通<k-badge className="k-badge__normal pullRight">20</k-badge></li>
-    <li>绿色<k-badge className="k-badge__green pullRight">100</k-badge></li>
-    <li>黄色<k-badge className="k-badge__yellow pullRight">30</k-badge></li>
-    <li>橙色<k-badge className="k-badge__orange pullRight">30</k-badge></li>
-  </ul>
+  <k-panel>
+      <template slot="title">
+        <p>标题</p>
+      </template>
+      <template slot="extra">
+         <k-button mode="text">
+            <k-icon type="icon-refresh"></k-icon>
+            <span>我是按钮</span>
+          </k-button>
+      </template>
+      <p>我是内容</p>
+    </k-panel>
+    <k-panel>
+      <template slot="title">
+        <h2 style="margin: 0;">标题</h2>
+      </template>
+      <template slot="extra">
+         <k-button mode="primary" :outLined="true">按钮</k-button>
+      </template>
+      <p>我是内容</p>
+    </k-panel>
 </div>
 
 ::: demo
 
 ```html
 
-<ul class="temp-list">
-  <li>普通<k-badge className="k-badge__normal pullRight">20</k-badge></li>
-  <li>绿色<k-badge className="k-badge__green pullRight">100</k-badge></li>
-  <li>黄色<k-badge className="k-badge__yellow pullRight">30</k-badge></li>
-  <li>橙色<k-badge className="k-badge__orange pullRight">30</k-badge></li>
-</ul>
+<k-panel>
+      <template slot="title">
+        <p>标题</p>
+      </template>
+      <template slot="extra">
+         <k-button mode="text">
+            <k-icon type="icon-refresh"></k-icon>
+            <span>我是按钮</span>
+          </k-button>
+      </template>
+      <p>我是内容</p>
+    </k-panel>
+    <k-panel>
+      <template slot="title">
+        <h2 style="margin: 0;">标题</h2>
+      </template>
+      <template slot="extra">
+         <k-button mode="primary" :outLined="true">按钮</k-button>
+      </template>
+      <p>我是内容</p>
+    </k-panel>
 
 ```
 
 :::
+
+### 没有标题的面板
+<div class="demo-block">
+  <k-panel>
+    <p>面板内容</p>
+  </k-panel>
+</div>
