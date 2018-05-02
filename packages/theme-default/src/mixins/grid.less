@@ -1,0 +1,64 @@
+.make-common-grid-columns-12 (@index: 1) when (@index <= @column-count-12) {
+    .k-col-@{index}_@{column-count-12} {
+        float: left;
+        box-sizing: border-box;
+        width: percentage((@index / @column-count-12));
+    }
+    .k-col-offset-@{index}_@{column-count-12} {
+        margin-left: percentage((@index / @column-count-12));
+    }
+    .k-col-pull-@{index}_@{column-count-12} {
+      position: relative;
+      right: percentage((@index / @column-count-12));
+      left: percentage((@index / @column-count-12));
+    }
+    .make-common-grid-columns-12(((@index + 1)));
+}
+
+// 创建响应式栅格化样式 12列
+.make-response-grid-columns-12 (@index: 1, @type) when (@index <= @column-count-12) {
+  .k-col-@{type}-@{index}_@{column-count-12} {
+      width: percentage((@index / @column-count-12));
+  }
+  .k-col-@{type}-offset-@{index}_@{column-count-12} {
+      margin-left: percentage((@index / @column-count-12));
+  }
+  .k-col-@{type}-pull-@{index}_@{column-count-12} {
+    position: relative;
+    right: percentage((@index / @column-count-12));
+    left: percentage((@index / @column-count-12));
+  }
+  .make-response-grid-columns-12(((@index + 1)), @type);
+}
+
+.make-common-grid-columns-24 (@index) when (@index <= @column-count-24) {
+    .k-col-@{index}_@{column-count-24} {
+        float: left;
+        box-sizing: border-box;
+        width: percentage((@index / @column-count-24));
+    }
+    .k-col-offset-@{index}_@{column-count-24} {
+        margin-left: percentage((@index / @column-count-24));
+    }
+    .k-col-pull-@{index}_@{column-count-24} {
+      position: relative;
+      right: percentage((@index / @column-count-24));
+      left: percentage((@index / @column-count-24));
+    }
+    .make-common-grid-columns-24(((@index + 1)));
+}
+
+.make-response-grid-columns-24 (@index: 1, @type) when (@index <= @column-count-24) {
+  .k-col-@{type}-@{index}_@{column-count-24} {
+      width: percentage((@index / @column-count-24));
+  }
+  .k-col-@{type}-offset-@{index}_@{column-count-24} {
+      margin-left: percentage((@index / @column-count-24));
+  }
+  .k-col-@{type}-pull-@{index}_@{column-count-24} {
+    position: relative;
+    right: percentage((@index / @column-count-24));
+    left: percentage((@index / @column-count-24));
+  }
+  .make-response-grid-columns-24(((@index + 1)), @type);
+}

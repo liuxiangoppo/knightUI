@@ -1,0 +1,115 @@
+// 按钮基础样式
+.k-button {
+    display: inline-block;
+    padding: 6px 12px;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    font-size: @button-font-size;
+    outline: none;
+}
+
+.k-buttongroup {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    // margin
+    .k-button-margin();
+
+    .k-button {
+        position: relative;
+        float: left;
+        margin: 0 0 0 -1px; // 需要去掉margin 否则按钮之间不会挤在一起
+    }
+
+    // default、primary、success、warning、info、danger等样式在按钮组下需要单独调整一下其边框的样式
+}
+
+// 按钮圆角样式
+.k-button-radius0 {
+    .k-button-radius(0);
+}
+// 3像素
+.k-button-radius3 {
+    .k-button-radius(3px);
+}
+// 5像素
+.k-button-radius5 {
+    .k-button-radius(5px);
+}
+// 7像素
+.k-button-radius7 {
+    .k-button-radius(7px);
+}
+// 10像素
+.k-button-radius10 {
+    .k-button-radius(10px);
+}
+// 圆形
+.k-button-radius__circle {
+    .k-button-radius(100px);
+}
+
+// Default按钮样式
+.make-button(default, #777777, none, #777777);
+.make-button-hasbg(default, #777777, #efefef, #e5e5e5);
+
+// Primary按钮样式
+.make-button(primary, #e74c3c, none, #e74c3c);
+.make-button-hasbg(primary, #ffffff, #e74c3c, #e64433);
+
+// Success按钮样式
+.make-button(success, #5cb85c, none, #5cb85c);
+.make-button-hasbg(success, #ffffff, #5cb85c, #55b555);
+
+// Info按钮样式
+.make-button(info, #5bc0de, none, #5bc0de);
+.make-button-hasbg(info, #ffffff, #5bc0de, #53bddc);
+
+// Warning按钮样式
+.make-button(warning, #f0ad4e, none, #f0ad4e);
+.make-button-hasbg(warning, #ffffff, #f0ad4e, #efa945);
+
+// Danger按钮样式
+.make-button(danger, #d9534f, none, #d9534f);
+.make-button-hasbg(danger, #ffffff, #d9534f, #d74b47);
+
+// 链接Link状态的按钮样式
+.k-button-text {
+    color: #6190e8;
+    text-decoration: none;
+}
+
+.k-button-sizing__large {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+}
+
+.k-button-sizing__normal {
+    padding: 6px 12px;
+    font-size: @button-font-size;;
+    line-height: 1.43;
+}
+
+.k-button-sizing__small {
+    padding: 5px 10px;
+    font-size: @button-font-size - 1;
+    line-height: 1.5;
+}
+
+.k-button-sizing__extraSmall {
+    padding: 1px 5px;
+    font-size: @button-font-size - 1;
+    line-height: 1.5;
+}
+
+.k-button-sizing__block {
+    display: block;
+    width: 100%;
+}
+

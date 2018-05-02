@@ -1,0 +1,155 @@
+[
+    {
+        "name": "开始使用",
+        "id": "1",
+        "level": 1,
+        "disabled": true
+    },
+    {
+        "name": "简介",
+        "id": "",
+        "level": 1
+    },
+    {
+        "name": "如何安装",
+        "id": "",
+        "level": 1
+    },
+    {
+        "name": "App布局",
+        "id": "",
+        "level": 1
+    },
+    {
+        "name": "初始化App",
+        "id": "",
+        "level": 1
+    },
+    {
+        "name": "导航/路由器",
+        "id": "",
+        "level": 1
+    },
+    {
+        "name": "Vue组件",
+        "id": "",
+        "level": 1,
+        "disabled": true
+    },
+    {
+        "name": "面板",
+        "id": "",
+        "level": 1,
+        "menus": [
+            {
+                "name": "手风琴面板",
+                "id": "",
+                "level": 2
+            },
+            {
+                "name": "Tab面板",
+                "id": "",
+                "level": 2
+            }
+        ]
+    },
+    {
+        "name": "徽章(Badge)",
+        "id": "",
+        "level": 1
+    },
+    {
+        "name": "按钮",
+        "id": "",
+        "level": 1
+    },
+    {
+        "name": "卡片",
+        "id": "",
+        "level": 1
+    },
+    {
+        "name": "表单",
+        "id": "",
+        "level": 1,
+        "menus": [
+            {
+                "name": "复选框&单选框",
+                "id": "1",
+                "level": 2
+            },
+            {
+                "name": "表单元素",
+                "id": "1",
+                "level": 2
+            },
+            {
+                "name": "选择框",
+                "id": "1",
+                "level": 2
+            }
+        ]
+    },
+    {
+        "name": "表格",
+        "id": "",
+        "level": 1
+    },
+    {
+        "name": "列表",
+        "id": "",
+        "level": 1,
+        "menus": [
+            {
+                "name": "列表",
+                "id": "",
+                "level": 2
+            },
+            {
+                "name": "列表项",
+                "id": "",
+                "level": 2
+            },
+            {
+                "name": "列表按钮",
+                "id": "",
+                "level": 2
+            },
+            {
+                "name": "手风琴列表",
+                "id": "",
+                "level": 2
+            }
+        ]
+    },
+    {
+        "name": "消息",
+        "id": "",
+        "level": 1
+    },
+    {
+        "name": "消息提示",
+        "id": "",
+        "level": 1
+    },
+    {
+        "name": "模态框",
+        "id": "",
+        "level": 1
+    },
+    {
+        "name": "搜索框",
+        "id": "",
+        "level": 1
+    },
+    {
+        "name": "时间轴",
+        "id": "",
+        "level": 1
+    },
+    {
+        "name": "Swiper",
+        "id": "",
+        "level": 1
+    }
+]

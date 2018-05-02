@@ -1,0 +1,70 @@
+.k-row {
+    position: relative;
+    box-sizing: border-box;
+    .clearfix();
+}
+// flex布局
+.k-row__flex {
+    display: flex !important;
+}
+// 对其方式: start
+.k-row-justify__start {
+    justify-content: flex-start;
+}
+// 对其方式: center
+.k-row-justify__center {
+    justify-content: center;
+}
+// 对其方式: end
+.k-row-justify__end {
+    justify-content: flex-end;
+}
+// 对其方式: space-between
+.k-row-justify__spaceBetween {
+    justify-content: space-between;
+}
+// 对其方式: space-around
+.k-row-justify__spaceAround {
+    justify-content: space-around;
+}
+
+// 创建栅格数为12的列样式
+// 命名格式为k-col-1_12 : k-col-{索引}_{总列数}
+.make-common-grid-columns-12(1);
+// 创建栅格数为24的列样式
+// 命名格式为k-col-1_24 : k-col-{索引}_{总列数}
+.make-common-grid-columns-24(1);
+
+.k-col-0_12 {
+    width: 0;
+}
+
+.k-col-0_24 {
+    width: 0;
+}
+
+// 创建在超小设备手机（<768px）分辨率下的栅格样式
+@media (max-width: 768px) {
+    .make-response-grid-columns-12(1, xs);
+    .make-response-grid-columns-24(1, xs);
+}
+// 创建在小型设备平板电脑（≥768px）分辨率下的栅格样式
+@media (min-width: 768px) {
+    .make-response-grid-columns-12(1, sm);
+    .make-response-grid-columns-24(1, sm);
+}
+// 创建在中型设备台式电脑（≥992px）分辨率下的栅格样式
+@media (min-width: 992px) {
+    .make-response-grid-columns-12(1, md);
+    .make-response-grid-columns-24(1, md);
+}
+// 创建在大型设备台式电脑（≥1200px）分辨率下的栅格样式
+@media (min-width: 1200px) {
+    .make-response-grid-columns-12(1, lg);
+    .make-response-grid-columns-24(1, lg);
+}
+// 创建在超大型设备台式电脑分辨率下的栅格样式
+// @media (max-width: 768px) {
+    
+// }
+

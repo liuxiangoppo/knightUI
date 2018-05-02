@@ -1,0 +1,21 @@
+@column-count-12: 12;
+@column-count-24: 24;
+
+.make-response-grid-columns-24 (@index: 1, @type) when (@index <= @column-count-24) {
+    .k-col-@{type}-@{index}_@{column-count-24} {
+        width: percentage((@index / @column-count-24));
+    }
+    .k-col-@{type}-offset-@{index}_@{column-count-24} {
+        margin-left: percentage((@index / @column-count-24));
+    }
+    .k-col-@{type}-pull-@{index}_@{column-count-24} {
+        position: relative;
+        right: percentage((@index / @column-count-24));
+        left: percentage((@index / @column-count-24));
+    }
+    .make-response-grid-columns-24(((@index + 1)), @type);
+}
+
+@media (max-width: 768px) {
+    .make-response-grid-columns-24(1, xs);
+}

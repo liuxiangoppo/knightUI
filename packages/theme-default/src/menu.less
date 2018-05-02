@@ -1,0 +1,56 @@
+.k-menu-item{
+  list-style: none;
+  position: relative;
+
+  .k-menu_text_disabled {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    padding: @menuItemPaddingTop @menuItemPaddingLeft;
+    font-size: 12px;
+    border-bottom: 1px solid @menuItemBorderBottomColor;
+    color: @menuItemTextDisabledColor;
+    outline: none;
+    cursor: text;
+  }
+
+  .k-menu_text {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: @menuItemFontColor;
+    padding: @menuItemPaddingTop @menuItemPaddingLeft;
+    font-size: @menuItemTextSize;
+    border-bottom: 1px solid @menuItemBorderBottomColor;
+    cursor: pointer;
+
+    .k-menu-item_arrow {
+      position: absolute;
+      right: 10px;
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+
+    /*导航菜单方向-左*/
+    .arrow_direction_left {
+      transform: rotate(0deg);
+    }
+
+    /*导航菜单方向-下*/
+    .arrow_direction_bottom {
+      transform: rotate(-90deg);
+    }
+
+    &:focus {
+      .menu-item-hover();
+    }
+
+    &:hover {
+      .menu-item-hover();
+    }
+  }
+}
+
+.k-menu-submenu {
+  // padding-left: 5px;
+}

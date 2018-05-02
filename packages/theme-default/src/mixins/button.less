@@ -1,0 +1,117 @@
+// 创建不同模式下的按钮
+.make-button (@type, @color, @bgColor, @borderColor) {
+    .k-button-@{type} {
+        color: @color;
+        background-color: @bgColor;
+        border-color: @borderColor;
+
+        .k-button-margin();
+        &:disabled {
+            .k-button-disabled-mixin();
+        }
+        &:focus:enabled {
+            .k-button-mixin(@type);
+        }
+        &:active:enabled {
+            .k-button-mixin(@type);
+        }
+        &:hover:enabled {
+            .k-button-mixin(@type);
+        }
+    }
+}
+
+.make-button-hasbg (@type, @color, @bgColor, @borderColor) {
+    .k-button-@{type}__hasBg {
+        color: @color;
+        background-color: @bgColor;
+        border-color: @borderColor;
+
+        .k-button-margin();
+        &:disabled {
+            .k-button-disabled-mixin();
+        }
+        &:focus:enabled {
+            .k-button-mixin(@type);
+        }
+        &:active:enabled {
+            .k-button-mixin(@type);
+        }
+        &:hover:enabled {
+            .k-button-mixin(@type);
+        }
+    }
+}
+
+.k-button-mixin (default) {
+    .k-button-default-mixin();
+}
+.k-button-mixin (primary) {
+    .k-button-primary-mixin();
+}
+.k-button-mixin (success) {
+    .k-button-success-mixin();
+}
+.k-button-mixin (info) {
+    .k-button-info-mixin();
+}
+.k-button-mixin (danger) {
+    .k-button-danger-mixin();
+}
+.k-button-mixin (warning) {
+    .k-button-warning-mixin();
+}
+.k-button-mixin(disabled) {
+    .k-button-disabled-mixin();
+}
+//--------------------------------------------------------
+
+.k-button-margin {
+    margin: 0 5px 5px 0;
+}
+.k-button-radius(@radius) {
+    border-radius: @radius;
+}
+
+.k-button-default-mixin {
+    color: #777777;
+    background-color: @mode-default-bg-color;
+    border-color: @mode-default-border-color;
+}
+
+.k-button-primary-mixin {
+    color: @mode-primary-font-color;
+    background-color: @mode-primary-bg-color;
+    border-color: @mode-primary-border-color;
+}
+
+.k-button-success-mixin {
+    color: @mode-success-font-color;
+    background-color: @mode-success-bg-color;
+    border-color: @mode-success-border-color;
+}
+
+.k-button-info-mixin {
+    color: @mode-info-font-color;
+    background-color: @mode-info-bg-color;
+    border-color: @mode-info-bg-color;
+}
+
+.k-button-warning-mixin {
+    color: @mode-warning-font-color;
+    background-color: @mode-warning-bg-color;
+    border-color: @mode-warning-border-color;
+}
+
+.k-button-danger-mixin {
+    color: @mode-danger-font-color;
+    background-color: @mode-danger-bg-color;
+    border-color: @mode-danger-border-color;
+}
+
+.k-button-disabled-mixin {
+    color: @mode-disabled-font-color;
+    background-color: @mode-disabled-bg-color;
+    border-color: @mode-disabled-border-color;
+    cursor: not-allowed;
+}
