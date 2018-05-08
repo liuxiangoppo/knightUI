@@ -34,6 +34,11 @@ export default new Router({
       path: '/panel',
       name: 'panel',
       component: r => require.ensure([], () => r(require('../docs/panel.md')))
+    },
+    {
+      path: '/tab',
+      name: 'tab',
+      component: r => require.ensure([], () => r(require('../docs/tab.md')))
     }
   ]
 })

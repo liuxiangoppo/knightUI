@@ -18,6 +18,9 @@ import KPanelHead from 'packages/panelhead'
 import KPanelBody from 'packages/panelbody'
 // Icon图标
 import KIcon from 'packages/icon'
+// Tab面板
+import KTab from 'packages/tab'
+import KTabContent from 'packages/tabcontent'
 
 const components = [
     // 导航菜单
@@ -39,7 +42,10 @@ const components = [
     KPanelHead,
     KPanelBody,
     // 图标
-    KIcon
+    KIcon,
+    // Tab选项卡
+    KTab,
+    KTabContent
 ]
 
 const install = function (Vue) {
@@ -55,16 +61,23 @@ export default {
     install,
     // NavMenu 布局
     KMenu,
+    // 徽章
     KBadge,
+    // 面包屑
     KBreadCrumb,
     KBreadCrumbItem,
+    // 栅格化系统
     KGrid,
     KRow,
     KCol,
+    // 按钮
     KButton,
     KButtonGroup,
     // 面板
     KPanel,
     // 图标
-    KIcon
+    KIcon,
+    // Tab面板
+    KTab,
+    KTabContent
 }

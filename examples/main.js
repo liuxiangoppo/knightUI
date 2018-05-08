@@ -10,7 +10,6 @@ import 'examples/assets/md.less'
 import demoBlock from './components/demo-block.vue'
 
 Vue.component('demo-block', demoBlock)
-console.log(KnightUI)
 Vue.use(KnightUI)
 Vue.config.productionTip = false
 
