@@ -21,6 +21,8 @@ import KIcon from 'packages/icon'
 // Tab面板
 import KTab from 'packages/tab'
 import KTabContent from 'packages/tabcontent'
+// Info信息框
+import KInfo from 'packages/info'
 
 const components = [
     // 导航菜单
@@ -45,7 +47,9 @@ const components = [
     KIcon,
     // Tab选项卡
     KTab,
-    KTabContent
+    KTabContent,
+    // 信息框
+    KInfo
 ]
 
 const install = function (Vue) {
@@ -79,5 +83,7 @@ export default {
     KIcon,
     // Tab面板
     KTab,
-    KTabContent
+    KTabContent,
+    // 信息框
+    KInfo
 }
