@@ -23,7 +23,9 @@ import KTab from 'packages/tab'
 import KTabContent from 'packages/tabcontent'
 // Info信息框
 import KInfo from 'packages/info'
-
+// Message
+import KMessage from 'packages/message'
+import KTip from 'packages/tips'
 const components = [
     // 导航菜单
     KMenu,
@@ -49,12 +51,14 @@ const components = [
     KTab,
     KTabContent,
     // 信息框
-    KInfo
+    KInfo,
 ]
 
 const install = function (Vue) {
     if (install.installed) return
     components.map(component => Vue.component(component.name, component))
+    Vue.prototype.$KTip = KTip.installTip
+    Vue.prototype.$KMessage = KMessage
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

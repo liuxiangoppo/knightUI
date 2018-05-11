@@ -1,0 +1,84 @@
+.k-tip {
+    display: block;
+    position: absolute;
+    background-color: #3695cc;
+    padding: 7px;
+    .radius3px();
+    color: #fff;
+    white-space: nowrap;
+    z-index: 19900420;
+    .common-box-shadow();
+}
+// 提示框方向 向左
+.k-tip-direction__left {
+    transform: translate(-100%, -50%);
+
+    .k-tip-arrow {
+        display: inline-block;
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 0;
+        top: 50%;
+        right: -10px;
+        border-top: 10px solid transparent;
+        border-left: 15px solid #3695CC;
+        border-bottom: 10px solid transparent;
+        transform: translate(0, -50%);
+    }
+}
+// 提示框方向 向右
+.k-tip-direction__right {
+    transform: translate(0, -50%);
+
+    .k-tip-arrow {
+        display: inline-block;
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: -10px;
+        border-top: 10px solid transparent;
+        border-right: 15px solid #3695CC;
+        border-bottom: 10px solid transparent;
+        transform: translate(0, -50%);
+    }
+
+}
+// 提示框方向 向上
+.k-tip-direction__top {
+    transform: translate(-50%, -100%);
+
+    .k-tip-arrow {
+        display: inline-block;
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 0;
+        left: 50%;
+        bottom: -10px;
+        border-top: 15px solid #3695CC;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        transform: translate(-50%, 0);
+    }
+}
+// 提示框方向 向下
+.k-tip-direction__bottom {
+    transform: translate(-50%, 100%);
+
+    .k-tip-arrow {
+        display: inline-block;
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 0;
+        left: 50%;
+        top: -10px;
+        border-bottom: 15px solid #3695CC;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        transform: translate(-50%, 0);
+    }
+}

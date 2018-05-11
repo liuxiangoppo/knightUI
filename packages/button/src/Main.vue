@@ -1,8 +1,8 @@
 <template>
-  <button v-if="!isText" type="button" class="k-button" :class="btnClass">
+  <button v-if="!isText" type="button" class="k-button" :class="btnClass" @click="handleClick">
       <slot></slot>
   </button>
-  <a v-else class="k-button" :class="btnClass">
+  <a v-else class="k-button" :class="btnClass" @click="handleClick">
     <slot></slot>
   </a>
 </template>
@@ -50,6 +50,11 @@ export default {
     },
     isText () {
       return this.mode === 'text'
+    }
+  },
+  methods: {
+    handleClick (e) {
+      this.$emit('click', e)
     }
   }
 }

@@ -44,6 +44,16 @@ export default new Router({
       path: '/info',
       name: 'info',
       component: r => require.ensure([], () => r(require('../docs/info.md')))
+    },
+    {
+      path: '/message',
+      name: 'message',
+      component: r => require.ensure([], () => r(require('../docs/message.md')))
+    },
+    {
+      path: '/tip',
+      name: 'tip',
+      component: r => require.ensure([], () => r(require('../docs/tip.md')))
     }
   ]
 })
