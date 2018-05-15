@@ -1,0 +1,67 @@
+.k-notify {
+    position: fixed;
+    min-width: 300px;
+    box-sizing: border-box;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ebeef5;
+    transition: opacity .3s, transform .3s, left .3s, right .3s, top 0.4s, bottom .3s;
+    overflow: hidden;
+    // 圆角
+    .radius7px();
+    // 阴影
+    .common-box-shadow();
+    // 标题
+    .k-notify-title {
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    // 内容
+    .k-notify-content {
+        font-size: @fontSize;
+    }
+}
+
+/*位置:左上*/
+.k-notify-position__topLeft {
+    left: 10px;
+}
+/*位置:右上*/
+.k-notify-position__topRight {
+    right: 10px;
+}
+/*位置:左下*/
+.k-notify-position__bottomLeft {
+    left: 10px;
+}
+/*位置:右下*/
+.k-notify-position__bottomRight {
+    right: 10px;
+}
+/*动画*/
+.k-notify-fade-enter {
+    opacity: 0;
+    transform: translateX(100%);
+
+    &.k-notify-position__topLeft {
+        left: 0;
+        transform: translateX(-100%);
+    }
+    &.k-notify-position__topRight {
+        right: 0;
+        transform: translateX(100%);
+    }
+    &.k-notify-position__bottomLeft {
+        left: 0;
+        transform: translateX(-100%);
+    }
+    &.k-notify-position__bottomRight {
+        right: 0;
+        transform: translateX(100%);
+    }
+}
+.k-notify-fade-leave-active {
+    opacity: 0;
+}

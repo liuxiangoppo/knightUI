@@ -54,6 +54,11 @@ export default new Router({
       path: '/tip',
       name: 'tip',
       component: r => require.ensure([], () => r(require('../docs/tip.md')))
+    },
+    {
+      path: '/notification',
+      name: 'notification',
+      component: r => require.ensure([], () => r(require('../docs/Notify.vue')))
     }
   ]
 })

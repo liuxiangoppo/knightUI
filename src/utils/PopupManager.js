@@ -1,22 +1,8 @@
 const instances = {}
 
 const PopupManager = {
+    // 作者的生日
     zIndex: 19900420,
-
-    getInstance: function (id) {
-        return instances[id]
-    },
-
-    register: function () {
-        instances[id] = instance
-    },
-
-    deregister: function (id) {
-        if (id) {
-            instances[id] = null;
-            delete instances[id];
-        }
-    },
 
     nextZIndex: function () {
         return PopupManager.zIndex++;

@@ -26,6 +26,7 @@ import KInfo from 'packages/info'
 // Message
 import KMessage from 'packages/message'
 import KTip from 'packages/tips'
+import KNotification from 'packages/notification'
 const components = [
     // 导航菜单
     KMenu,
@@ -59,6 +60,7 @@ const install = function (Vue) {
     components.map(component => Vue.component(component.name, component))
     Vue.prototype.$KTip = KTip.installTip
     Vue.prototype.$KMessage = KMessage
+    Vue.prototype.$KNotify = KNotification
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
