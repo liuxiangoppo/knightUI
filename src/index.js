@@ -27,6 +27,8 @@ import KInfo from 'packages/info'
 import KMessage from 'packages/message'
 import KTip from 'packages/tips'
 import KNotification from 'packages/notification'
+// KModal 模态框
+import KModal from 'packages/modal'
 const components = [
     // 导航菜单
     KMenu,
@@ -53,6 +55,8 @@ const components = [
     KTabContent,
     // 信息框
     KInfo,
+    // 模态框
+    KModal
 ]
 
 const install = function (Vue) {
@@ -91,5 +95,6 @@ export default {
     KTab,
     KTabContent,
     // 信息框
-    KInfo
+    KInfo,
+    KModal
 }

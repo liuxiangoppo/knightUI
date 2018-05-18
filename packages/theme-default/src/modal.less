@@ -1,0 +1,81 @@
+.k-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 0;
+
+    .k-modal-dialog {
+        position: relative;
+        // 内容
+        .k-modal-content {
+            position: relative;
+            top: 100px;
+            background-color: #fff;
+            width: 500px;
+            margin: 0 auto;
+            .common-box-shadow();
+            // .borderRadius(6px);
+            .clearfix();
+            @media (max-width: 768px) {
+                width: auto !important;
+                margin: 10px;
+            }
+
+            .k-modal-header {
+                border-bottom: 1px solid #e9ecef;
+                padding: 14px 16px;
+                // 标题
+                .k-modal-title {
+                    margin: 0;
+                    line-height: 1.5;
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+
+                &.k-modal-header__right {
+                    text-align: right;
+                }
+                &.k-modal-header__center {
+                    text-align: center;
+                }
+                &.k-modal-header__left {
+                    text-align: left;
+                }
+            }
+            // 内容
+            .k-modal-body {
+                padding: 14px 16px;
+            }
+            .k-modal-footer {
+                padding: 14px 16px;
+                border-top: 1px solid #e9ecef;
+                .clearfix();
+                &.k-modal-footer__right {
+                    text-align: right;
+                }
+                &.k-modal-footer__center {
+                    text-align: center;
+                }
+                &.k-modal-footer__left {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+.k-modal-cover {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #000;
+    opacity: 0;
+}

@@ -59,6 +59,11 @@ export default new Router({
       path: '/notification',
       name: 'notification',
       component: r => require.ensure([], () => r(require('../docs/Notify.vue')))
+    },
+    {
+      path: '/modal',
+      name: 'modal',
+      component: r => require.ensure([], () => r(require('../docs/modal.vue')))
     }
   ]
 })

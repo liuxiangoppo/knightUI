@@ -1,6 +1,6 @@
 <template>
   <div class="knightLogo">
-      <p>AdminUI</p>
+      <span class="logo-text">前端Vue组件库-KUI</span>
   </div>
 </template>
 
@@ -17,11 +17,11 @@ export default {
     text-align: center;
     line-height: 50px;
 
-    p {
-      font-family: 'Oswald', sans-serif !important;
-      font-size: 30px;
-      color: #FFF;
+    span.logo-text {
+      display: block;
       font-weight: bold;
+      font-size: 20px;
+      color: #ffffff;
     }
   }
 </style>

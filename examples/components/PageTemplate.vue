@@ -1,6 +1,7 @@
 <template>
   <k-container without="none">
     <k-header>
+      <logo></logo>
     </k-header>
     <k-sidebar>
       <k-menu :menus="data"></k-menu>
@@ -18,7 +19,7 @@ import KContainer from './Container'
 import KHeader from './Header'
 import KFooter from './Footer'
 import KSidebar from './Sidebar'
-
+import Logo from './Logo'
 import KMenu from 'packages/menu'
 import menuJson from 'examples/assets/menu.json'
 
@@ -30,7 +31,7 @@ export default {
     }
   },
   components: {
-    KContainer, KHeader, KSidebar, KFooter, KMenu
+    KContainer, KHeader, KSidebar, KFooter, KMenu, Logo
   },
   mounted () {
     // Todo
