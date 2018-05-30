@@ -16,7 +16,7 @@ export default {
 <style lang="less">
 .k-sidebar {
     width: 250px;
-    height: 100%;
+    // height: 100%;
     position: fixed;
     top: 50px;
     bottom: 0px;

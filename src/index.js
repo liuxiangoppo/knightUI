@@ -1,5 +1,7 @@
 // NavMenu 布局
 import KMenu from 'packages/menu'
+import KMenuNavItem from 'packages/menu-nav-item'
+import KMenuSub from 'packages/menusub'
 // 徽章
 import KBadge from 'packages/badge'
 // 面包屑
@@ -29,9 +31,13 @@ import KTip from 'packages/tips'
 import KNotification from 'packages/notification'
 // KModal 模态框
 import KModal from 'packages/modal'
+// 信息盒子
+import KMessageBox from 'packages/messagebox'
 const components = [
     // 导航菜单
     KMenu,
+    KMenuNavItem,
+    KMenuSub,
     // 徽章
     KBadge,
     // 面包屑
@@ -65,6 +71,7 @@ const install = function (Vue) {
     Vue.prototype.$KTip = KTip.installTip
     Vue.prototype.$KMessage = KMessage
     Vue.prototype.$KNotify = KNotification
+    Vue.prototype.$KMessageBox = KMessageBox
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -75,6 +82,8 @@ export default {
     install,
     // NavMenu 布局
     KMenu,
+    KMenuNavItem,
+    KMenuSub,
     // 徽章
     KBadge,
     // 面包屑

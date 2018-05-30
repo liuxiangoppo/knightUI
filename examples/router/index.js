@@ -11,6 +11,11 @@ export default new Router({
       component: r => require.ensure([], () => r(require('../docs/layouts.md')))
     },
     {
+      path: '/menu',
+      name: 'menu',
+      component: r => require.ensure([], () => r(require('../docs/menu.md')))
+    },
+    {
       path: '/badge',
       name: 'badge',
       component: r => require.ensure([], () => r(require('../docs/badge.md')))
@@ -64,6 +69,11 @@ export default new Router({
       path: '/modal',
       name: 'modal',
       component: r => require.ensure([], () => r(require('../docs/modal.vue')))
+    },
+    {
+      path: '/messagebox',
+      name: 'messagebox',
+      component: r => require.ensure([], () => r(require('../docs/MessageBox.vue')))
     }
   ]
 })

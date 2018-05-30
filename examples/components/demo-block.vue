@@ -9,7 +9,7 @@
           </div>
         </div>
       </div>
-    <span class="docs-trans docs-demo__triangle" @click="toggle">{{isExpand ? '隐藏代码' : '显示代码'}}</span>
+    <span class="docs-trans docs-demo__triangle" @click="toggle">{{isExpand ? 'HIDE CODE' : 'SHOW CODE'}}</span>
   </div>
 </template>
 
@@ -55,9 +55,10 @@
     text-align: center;
     display: inline-block;
     color: #C5D9E8;
-    font-size: 12px;
+    font-size: 14px;
     padding: 10px 0;
     background-color: #FAFBFC;
+    cursor: pointer;
   }
 
   .docs-demo__code,

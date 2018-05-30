@@ -1,7 +1,7 @@
 <template>
-  <span class="k-icon" :class="iconClass" :style="iconStyle">
+  <i class="k-icon" :class="iconClass" :style="iconStyle">
     <slot></slot>
-  </span>
+  </i>
 </template>
 
 <script>
@@ -29,7 +29,8 @@ export default {
       return {
         fontSize: `${this.size}px`,
         color: this.color,
-        fontWeight: 'bold'
+        display: 'inline-block',
+        marginRight: '5px'
       }
     }
   }
