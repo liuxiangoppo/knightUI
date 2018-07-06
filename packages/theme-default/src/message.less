@@ -10,6 +10,46 @@
     padding: 15px 15px 15px 20px;
     transition: opacity 0.3s, transform .4s;
     font-size: @fontSize;
+    .message-closeable {
+      width: 16px;
+      height: 16px;
+
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      
+      text-align: center;
+      vertical-align: middle;
+
+      font-size: 21px;
+      font-weight: 700;
+      color: #000;
+      text-shadow: 0 1px 0 #fff;
+      filter: alpha(opacity=20);
+      opacity: .2;
+
+      cursor: pointer;
+    }
+    &.is-primary {
+      background-color: @primary;
+      color: #fff;
+    }
+    &.is-success {
+      background-color: @success;
+      color: #fff;
+    }
+    &.is-warning {
+      background-color: @warning;
+      color: #fff;
+    }
+    &.is-danger {
+      background-color: @danger;
+      color: #fff;
+    }
+    &.is-info {
+      background-color: @info;
+      color: #fff;
+    }
 }
 
 .k-message-fade-enter {

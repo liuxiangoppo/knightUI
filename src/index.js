@@ -33,6 +33,33 @@ import KNotification from 'packages/notification'
 import KModal from 'packages/modal'
 // 信息盒子
 import KMessageBox from 'packages/messagebox'
+// 图钉
+import KAffix from 'packages/affix'
+import KScrollTo from 'packages/scrollto'
+import KTimeLine from 'packages/timeline'
+import KTimeLineItem from 'packages/timeline-item'
+import KAlert from 'packages/alert'
+import KCollapse from 'packages/collapse'
+import KCollapseItem from 'packages/collapse-item'
+import KAside from 'packages/aside'
+import KPagination from 'packages/pagination'
+// 下拉菜单
+import KDropDown from 'packages/dropdown'
+import DropdownMenu from 'packages/dropdown-menu'
+import DropdownMenuItem from 'packages/dropdown-menu-item'
+import KSteps from 'packages/steps'
+import KStep from 'packages/step'
+// 标签
+import KTag from 'packages/tag'
+import KTable from 'packages/table'
+import TableColumn from 'packages/table-column'
+// 卡片
+import KCard from 'packages/card'
+// Process 进度条
+import KProgressBar from 'packages/progressbar'
+// Popover
+import KPopover from 'packages/popover'
+import KPopconfirm from 'packages/popconfirm'
 const components = [
     // 导航菜单
     KMenu,
@@ -62,13 +89,34 @@ const components = [
     // 信息框
     KInfo,
     // 模态框
-    KModal
+    KModal,
+    KAffix,
+    KScrollTo,
+    KTimeLine,
+    KTimeLineItem,
+    KAlert,
+    KCollapse,
+    KCollapseItem,
+    KAside,
+    KPagination,
+    KDropDown,
+    DropdownMenu,
+    DropdownMenuItem,
+    KSteps,
+    KStep,
+    KTag,
+    KTip,
+    KTable,
+    TableColumn,
+    KCard,
+    KProgressBar,
+    KPopover,
+    KPopconfirm
 ]
 
 const install = function (Vue) {
     if (install.installed) return
     components.map(component => Vue.component(component.name, component))
-    Vue.prototype.$KTip = KTip.installTip
     Vue.prototype.$KMessage = KMessage
     Vue.prototype.$KNotify = KNotification
     Vue.prototype.$KMessageBox = KMessageBox
@@ -105,5 +153,27 @@ export default {
     KTabContent,
     // 信息框
     KInfo,
-    KModal
+    KModal,
+    KAffix,
+    KScrollTo,
+    KTimeLine,
+    KTimeLineItem,
+    KAlert,
+    KCollapse,
+    KCollapseItem,
+    KAside,
+    KPagination,
+    KDropDown,
+    DropdownMenu,
+    DropdownMenuItem,
+    KSteps,
+    KStep,
+    KTag,
+    KTip,
+    KTable,
+    TableColumn,
+    KCard,
+    KProgressBar,
+    KPopover,
+    KPopconfirm
 }

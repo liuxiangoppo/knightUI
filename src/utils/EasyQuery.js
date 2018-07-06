@@ -340,10 +340,58 @@ class EasyDom {
             return this;
         }
     }
+
+    getScroll(top) {
+        if (typeof window === 'undefined') {
+            return 0;
+        }
+        let target = window;
+        if (this._isNotEmpty()) {
+            target = this.selectors[0]
+        }
+        const prop = top ? 'pageYOffset' : 'pageXOffset';
+        const method = top ? 'scrollTop' : 'scrollLeft';
+        const isWindow = target === window;
+
+        let ret = isWindow ? target[prop] : target[method];
+        // ie6,7,8 standard mode
+        if (isWindow && typeof ret !== 'number') {
+            ret = window.document.documentElement[method];
+        }
+        return ret;
+    }
 }
 
 export default class EasyQuery {
     static use(selector) {
         return new EasyDom(selector);
+    }
+
+    /**
+     * 判断目标对象是否为Function
+     * @param {*} obj 目标对象
+     */
+    static isFunction(obj) {
+        return !!(obj && obj.constructor && obj.call && obj.apply);
+    }
+
+    /**
+     * 判断目标对象是否为空
+     * @param {*} obj 目标对象
+     */
+    static isEmpty(obj) {
+        if (obj === null) return true;
+        if (obj.length > 0) return false;
+        if (obj.length === 0) return true;
+        if (typeof obj !== 'object') return true;
+        let flag = true;
+        Object.keys(obj).every((key) => {
+            if (Object.prototype.hasOwnProperty.call(obj, key)) {
+                flag = false;
+                return false;
+            }
+            return true;
+        });
+        return flag;
     }
 }

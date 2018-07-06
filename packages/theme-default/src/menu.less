@@ -1,7 +1,6 @@
 .k-menu {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
 }
-
 .k-menu-item{
   list-style: none;
   position: relative;
@@ -34,16 +33,17 @@
       right: 10px;
       display: inline-block;
       transition: transform 0.2s;
+      font-size: 14px;
     }
 
     /*导航菜单方向-左*/
     .arrow_direction_left {
-      transform: rotate(0deg);
+      transform: rotate(-90deg);
     }
 
     /*导航菜单方向-下*/
     .arrow_direction_bottom {
-      transform: rotate(-90deg);
+      transform: rotate(90deg);
     }
 
     &:focus {
@@ -62,9 +62,32 @@
 }
 
 .k-menu-submenu {
+  /*我也不知道加上这句好不好……*/
+  background-color: #fff;
   &:extend(.k-menu-group);
 }
 
+.k-menu-horizontal {
+  .clearfix();
+  .k-menu-item_arrow {
+    position: static !important;
+    margin-left: 10px;
+  }
+  .k-menu_text {
+    min-width: 100px;
+  }
+  /*在mode为horizontal时 将submenu定位设为绝对定位*/
+  .k-menu-submenu {
+    .common-box-shadow();
+    .k-menu_text {
+      height: 40px;
+      line-height: 40px;
+      padding-top: 0;
+      padding-bottom: 0;
+      min-width: 100px;
+    }
+  }
+}
 .k-menu-horizontal>.k-menu-item {
   float: left;
 }

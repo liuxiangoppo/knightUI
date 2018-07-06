@@ -1,0 +1,59 @@
+.k-alert {
+    font-size: @fontSize;
+    padding: 12px 30px 12px 15px;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    display: flex;
+    position: relative;
+
+    .k-alert-closable {
+        position: absolute;
+        top: 14px;
+        right: 13px;
+        cursor: pointer;
+        transition: all 0.5s;
+        color: #000;
+        opacity: .2;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+        .k-icon {
+            font-size: 8px;
+            vertical-align: top;
+        }
+        &:hover {
+            transform: rotate(180deg);
+            color: #f00;
+            opacity: 1;
+        }
+    }
+
+    &.k-alert-primary {
+        background-color: @primary-lighten5;
+        border-color: @primary;
+        color: #fff;
+    }
+
+    &.k-alert-success {
+        background-color: @success-lighten5;
+        border-color: @success;
+        color: #fff;
+    }
+    
+    &.k-alert-warning {
+        background-color: @warning-lighten5;
+        border-color: @warning;
+        color: #fff;
+    }
+
+    &.k-alert-danger {
+        background-color: @danger-lighten5;
+        border-color: @danger;
+        color: #fff;
+    }
+
+    &.k-alert-info {
+        background-color: @info-lighten5;
+        border-color: @info;
+        color: #fff;
+    }
+}

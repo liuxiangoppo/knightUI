@@ -1,233 +1,205 @@
 <style>
-    
+    .marginTop10 {
+      margin-top: 10px;
+    }
 </style>
 # Button 按钮
 ----
-### 概述
-按钮组件
-### 默认状态下的按钮
+<k-info mode="flat" title="写在前面">
+  <p>个人认为将Button元素给Vue化是简单的事情复杂化</p>
+  <p>还是直接提供样式来美化按钮来的直接一点</p>
+</k-info>
+
+## 基本按钮
 
 <div class="demo-block">
- <k-button>按钮</k-button>
- <k-button mode="primary">按钮</k-button>
- <k-button mode="success">按钮</k-button>
- <k-button mode="info">按钮</k-button>
- <k-button mode="warning">按钮</k-button>
- <k-button mode="danger">按钮</k-button>
+ <button class="button">按钮</button>
+ <button class="button is-primary">按钮</button>
+ <button class="button is-info">按钮</button>
+ <button class="button is-success">按钮</button>
+ <button class="button is-warning">按钮</button>
+ <button class="button is-danger">按钮</button>
 </div>
 
 ::: demo
 ```html
 
- <k-button>按钮</k-button>
- <k-button mode="primary">按钮</k-button>
- <k-button mode="success">按钮</k-button>
- <k-button mode="info">按钮</k-button>
- <k-button mode="warning">按钮</k-button>
- <k-button mode="danger">按钮</k-button>
+ <button class="button">按钮</button>
+ <button class="button is-primary">按钮</button>
+ <button class="button is-info">按钮</button>
+ <button class="button is-success">按钮</button>
+ <button class="button is-warning">按钮</button>
+ <button class="button is-danger">按钮</button>
 
 ```
 :::
 
-### 带有边框的按钮
+## 各种状态下的按钮
 
 <div class="demo-block">
- <k-button>按钮</k-button>
- <k-button mode="primary" :outLined="true">按钮</k-button>
- <k-button mode="success" :outLined="true">按钮</k-button>
- <k-button mode="info" :outLined="true">按钮</k-button>
- <k-button mode="warning" :outLined="true">按钮</k-button>
- <k-button mode="danger" :outLined="true">按钮</k-button>
+ <h3>Loading状态下的按钮</h3>
+ <button class="button is-loading">Loading</button>
+ <button class="button is-primary is-loading">Loading</button>
+ <button class="button is-info is-loading">Loading</button>
+ <button class="button is-success is-loading">Loading</button>
+ <button class="button is-warning is-loading">Loading</button>
+ <button class="button is-danger is-loading">Loading</button>
+ <h3>活动状态下的按钮</h3>
+ <button class="button is-active">活动</button>
+ <button class="button is-primary is-active">活动</button>
+ <button class="button is-info is-active">活动</button>
+ <button class="button is-success is-active">活动</button>
+ <button class="button is-warning is-active">活动</button>
+ <button class="button is-danger is-active">活动</button>
+ <h3>禁用状态下的按钮</h3>
+ <button class="button" disabled>禁用</button>
+ <button class="button is-primary" disabled>禁用</button>
+ <button class="button is-info" disabled>禁用</button>
+ <button class="button is-success" disabled>禁用</button>
+ <button class="button is-warning" disabled>禁用</button>
+ <button class="button is-danger" disabled>禁用</button>
 </div>
 
 ::: demo
 ```html
 
- <k-button>按钮</k-button>
- <k-button mode="primary" :outLined="true">按钮</k-button>
- <k-button mode="success" :outLined="true">按钮</k-button>
- <k-button mode="info" :outLined="true">按钮</k-button>
- <k-button mode="warning" :outLined="true">按钮</k-button>
- <k-button mode="danger" :outLined="true">按钮</k-button>
+ <h3>Loading状态下的按钮</h3>
+ <button class="button is-loading">Loading</button>
+ <button class="button is-primary is-loading">Loading</button>
+ <button class="button is-info is-loading">Loading</button>
+ <button class="button is-success is-loading">Loading</button>
+ <button class="button is-warning is-loading">Loading</button>
+ <button class="button is-danger is-loading">Loading</button>
+ <h3>活动状态下的按钮</h3>
+ <button class="button is-active">活动</button>
+ <button class="button is-primary is-active">活动</button>
+ <button class="button is-info is-active">活动</button>
+ <button class="button is-success is-active">活动</button>
+ <button class="button is-warning is-active">活动</button>
+ <button class="button is-danger is-active">活动</button>
+ <h3>禁用状态下的按钮</h3>
+ <button class="button" disabled>禁用</button>
+ <button class="button is-primary" disabled>禁用</button>
+ <button class="button is-info" disabled>禁用</button>
+ <button class="button is-success" disabled>禁用</button>
+ <button class="button is-warning" disabled>禁用</button>
+ <button class="button is-danger" disabled>禁用</button>
 
 ```
 :::
 
-### 链接样式的按钮
+## 带有边框的按钮
 <div class="demo-block">
-  <k-button mode="text">
-  <k-icon type="icon-refresh"></k-icon>
-  我是按钮
-  </k-button>
-</div>
-
-::: demo
-```html
-
- <k-button mode="text">
-  <k-icon type="icon-refresh"></k-icon>
-  <span>我是按钮</span>
-  </k-button>
-
-```
-:::
-
-### 为按钮设置圆角
-预先设置了几种圆角```0```、```3```、```5```、```7```、```10```、```circle```
-
-<div class="demo-block">
-  <k-button radius="0" mode="primary">按钮</k-button>
-  <k-button radius="3" mode="success">按钮</k-button>
-  <k-button radius="5" mode="info">按钮</k-button>
-  <k-button radius="7" mode="warning">按钮</k-button>
-  <k-button radius="10" mode="danger">按钮</k-button>
-  <k-button radius="circle" mode="danger" disabled>按钮</k-button>
+  <button class="button is-primary is-border">Primary</button>
+  <button class="button is-success is-border">Success</button>
+  <button class="button is-warning is-border">Warning</button>
+  <button class="button is-danger is-border">Danger</button>
+  <button class="button is-info is-border">Info</button>
 </div>
 
 ::: demo
 
 ```html
 
-  <k-button radius="0" mode="primary">按钮</k-button>
-  <k-button radius="3" mode="success">按钮</k-button>
-  <k-button radius="5" mode="info">按钮</k-button>
-  <k-button radius="7" mode="warning">按钮</k-button>
-  <k-button radius="10" mode="danger">按钮</k-button>
-  <k-button radius="circle" mode="danger">按钮</k-button>
+  <button class="button is-primary is-border">Primary</button>
+  <button class="button is-success is-border">Success</button>
+  <button class="button is-warning is-border">Warning</button>
+  <button class="button is-danger is-border">Danger</button>
+  <button class="button is-info is-border">Info</button>
 
 ```
 :::
 
-### 不同尺寸的按钮
+
+## 不同尺寸的按钮
 可以设置不同的按钮尺寸
 <div class="demo-block">
-  <k-button radius="3" sizing="large">大尺寸按钮</k-button>
-  <k-button radius="3" sizing="normal">一般按钮</k-button>
-  <k-button radius="3" sizing="small">小尺寸按钮</k-button>
-  <k-button radius="3" sizing="extraSmall">极小按钮</k-button>
-  <k-button radius="3" sizing="block">块状按钮</k-button>
+  <button class="button is-large">Large</button>
+  <button class="button is-medium">Medium</button>
+  <button class="button">Normal</button>
+  <button class="button is-small">Small</button>
 </div>
 
 ::: demo
 
 ```html
 
-  <k-button radius="3" sizing="large">大尺寸按钮</k-button>
-  <k-button radius="3" sizing="normal">一般按钮</k-button>
-  <k-button radius="3" sizing="small">小尺寸按钮</k-button>
-  <k-button radius="3" sizing="extraSmall">极小按钮</k-button>
+  <button class="button is-large">Large</button>
+  <button class="button is-medium">Medium</button>
+  <button class="button">Normal</button>
+  <button class="button is-small">Small</button>
 
 ```
 :::
 
-### 带图标的按钮
+## 按钮组
 <div class="demo-block">
-  <k-button radius="circle" mode="primary">
-    <k-icon type="icon-add" :size="13"></k-icon>
-    增加
-  </k-button>
-  <k-button radius="circle" mode="danger">
-    <k-icon type="icon-delete" :size="13"></k-icon>
-    删除
-  </k-button>
-  <k-button radius="circle" mode="warning">
-    <k-icon type="icon-edit" :size="13"></k-icon>
-    修改
-  </k-button>
-  <k-button radius="circle" mode="info">
-    <k-icon type="icon-search" :size="13"></k-icon>
-    查询
-  </k-button>
-  <k-button radius="circle" mode="success">
-    <k-icon type="icon-refresh" :size="13"></k-icon>
-    刷新
-  </k-button>
-</div>
-
-::: demo
-
-```html
-<k-button radius="circle" mode="primary">
-    <k-icon type="icon-add" :size="13"></k-icon>
-    增加
-  </k-button>
-  <k-button radius="circle" mode="danger">
-    <k-icon type="icon-delete" :size="13"></k-icon>
-    删除
-  </k-button>
-  <k-button radius="circle" mode="warning">
-    <k-icon type="icon-edit" :size="13"></k-icon>
-    修改
-  </k-button>
-  <k-button radius="circle" mode="info">
-    <k-icon type="icon-search" :size="13"></k-icon>
-    查询
-  </k-button>
-  <k-button radius="circle" mode="success">
-    <k-icon type="icon-refresh" :size="13"></k-icon>
-    刷新
-  </k-button>
-```
-:::
-
-### 禁用按钮
-<div class="demo-block">
-  <k-button radius="3" sizing="normal" disabled>按钮被禁用</k-button>
+  <div class="k-button-group">
+    <button class="button">Left</button>
+    <button class="button">Center</button>
+    <button class="button">Right</button>
+  </div>
+  <div class="k-button-group marginTop10">
+    <button class="button is-primary">Left</button>
+    <button class="button is-primary">Center</button>
+    <button class="button is-primary">Right</button>
+  </div>
+  <div class="k-button-group marginTop10">
+    <button class="button is-success">Left</button>
+    <button class="button is-success">Center</button>
+    <button class="button is-success">Right</button>
+  </div>
+  <div class="k-button-group marginTop10">
+    <button class="button is-danger">Left</button>
+    <button class="button is-danger">Center</button>
+    <button class="button is-danger">Right</button>
+  </div>
+  <div class="k-button-group marginTop10">
+    <button class="button is-warning">Left</button>
+    <button class="button is-warning">Center</button>
+    <button class="button is-warning">Right</button>
+  </div>
+  <div class="k-button-group marginTop10">
+    <button class="button is-info">Left</button>
+    <button class="button is-info">Center</button>
+    <button class="button is-info">Right</button>
+  </div>
 </div>
 
 ::: demo
 
 ```html
 
-  <k-button radius="3" sizing="normal" disabled>按钮被禁用</k-button>
-
-```
-:::
-
-### 按钮组
-<div class="demo-block">
-  <k-button-group>
-    <k-button mode="success">
-      <k-icon type="icon-refresh" :size="12"></k-icon>
-      按钮
-    </k-button>
-    <k-button mode="success">按钮</k-button>
-    <k-button mode="success">按钮</k-button>
-  </k-button-group>
-  <k-button-group>
-    <k-button mode="info">按钮</k-button>
-    <k-button mode="info">按钮</k-button>
-    <k-button mode="info">按钮</k-button>
-  </k-button-group>
-  <k-button-group>
-    <k-button mode="primary">按钮</k-button>
-    <k-button mode="primary">按钮</k-button>
-    <k-button mode="primary">按钮</k-button>
-  </k-button-group>
-</div>
-
-::: demo
-
-```html
-
-  <k-button-group>
-    <k-button mode="success">
-      <k-icon type="icon-refresh" :size="12"></k-icon>
-      按钮
-    </k-button>
-    <k-button mode="success">按钮</k-button>
-    <k-button mode="success">按钮</k-button>
-  </k-button-group>
-  <k-button-group>
-    <k-button mode="info">按钮</k-button>
-    <k-button mode="info">按钮</k-button>
-    <k-button mode="info">按钮</k-button>
-  </k-button-group>
-  <k-button-group>
-    <k-button mode="primary">按钮</k-button>
-    <k-button mode="primary">按钮</k-button>
-    <k-button mode="primary">按钮</k-button>
-  </k-button-group>
+  <div class="k-button-group">
+    <button class="button">Left</button>
+    <button class="button">Center</button>
+    <button class="button">Right</button>
+  </div>
+  <div class="k-button-group marginTop10">
+    <button class="button is-primary">Left</button>
+    <button class="button is-primary">Center</button>
+    <button class="button is-primary">Right</button>
+  </div>
+  <div class="k-button-group marginTop10">
+    <button class="button is-success">Left</button>
+    <button class="button is-success">Center</button>
+    <button class="button is-success">Right</button>
+  </div>
+  <div class="k-button-group marginTop10">
+    <button class="button is-danger">Left</button>
+    <button class="button is-danger">Center</button>
+    <button class="button is-danger">Right</button>
+  </div>
+  <div class="k-button-group marginTop10">
+    <button class="button is-warning">Left</button>
+    <button class="button is-warning">Center</button>
+    <button class="button is-warning">Right</button>
+  </div>
+  <div class="k-button-group marginTop10">
+    <button class="button is-info">Left</button>
+    <button class="button is-info">Center</button>
+    <button class="button is-info">Right</button>
+  </div>
 
 ```
 :::

@@ -35,10 +35,10 @@
 
 <div class="demo-block">
   <ul class="temp-list">
-    <li>普通<k-badge className="k-badge__normal pullRight">20</k-badge></li>
-    <li>绿色<k-badge className="k-badge__green pullRight">100</k-badge></li>
-    <li>黄色<k-badge className="k-badge__yellow pullRight">30</k-badge></li>
-    <li>橙色<k-badge className="k-badge__orange pullRight">30</k-badge></li>
+    <li>普通<k-badge class-name="k-badge__normal pullRight">20</k-badge></li>
+    <li>绿色<k-badge class-name="k-badge__green pullRight">100</k-badge></li>
+    <li>黄色<k-badge class-name="k-badge__yellow pullRight">30</k-badge></li>
+    <li>橙色<k-badge class-name="k-badge__orange pullRight">30</k-badge></li>
   </ul>
 </div>
 
@@ -47,10 +47,10 @@
 ```html
 
 <ul class="temp-list">
-  <li>普通<k-badge className="k-badge__normal pullRight">20</k-badge></li>
-  <li>绿色<k-badge className="k-badge__green pullRight">100</k-badge></li>
-  <li>黄色<k-badge className="k-badge__yellow pullRight">30</k-badge></li>
-  <li>橙色<k-badge className="k-badge__orange pullRight">30</k-badge></li>
+  <li>普通<k-badge class-name="k-badge__normal pullRight">20</k-badge></li>
+  <li>绿色<k-badge class-name="k-badge__green pullRight">100</k-badge></li>
+  <li>黄色<k-badge class-name="k-badge__yellow pullRight">30</k-badge></li>
+  <li>橙色<k-badge class-name="k-badge__orange pullRight">30</k-badge></li>
 </ul>
 
 ```

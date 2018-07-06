@@ -5,6 +5,7 @@
       <p class="k-notify-content">
         {{ message }}
       </p>
+      <div class="notify-closeable" v-show="!closed" @click="close">×</div>
     </div>
   </transition>
 </template>
@@ -23,7 +24,7 @@ export default {
       // 是否允许使用HTML
       allowUseHTML: false,
       // 皮肤
-      theme: '',
+      type: '',
       // 图标样式
       iconClass: '',
       // 自定义class样式
@@ -51,6 +52,9 @@ export default {
     notifyClass () {
       let ary = []
       ary.push(`k-notify-position__${this.position}`)
+      if (this.type !== '') {
+        ary.push(`is-${this.type}`)
+      }
       return ary
     }
   },

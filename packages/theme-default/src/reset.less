@@ -37,7 +37,7 @@ button,
 input,
 select,
 textarea {
-    font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif
+    // font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif
 }
 
 h1 {
@@ -75,7 +75,7 @@ kbd,
 pre,
 samp,
 tt {
-    font-family: "Courier New", Courier, monospace
+    // font-family: "Courier New", Courier, monospace
 }
 
 small {
@@ -121,4 +121,12 @@ hr {
 
 html {
     overflow-y: scroll
+}
+
+* {
+    box-sizing: inherit;
+    &:before,
+    &:after {
+      box-sizing: inherit; 
+    }
 }

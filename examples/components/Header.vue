@@ -14,7 +14,7 @@ export default {
 .k-header {
     width: 100%;
     height: 50px;
-    background-color: #2a3b4c;
+    background-color: #3c81df;
     position: fixed;
     left: 0;
     top: 0;

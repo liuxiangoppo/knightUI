@@ -1,0 +1,120 @@
+.tag {
+    align-items: center;
+    display: inline-flex;
+    font-size: 12px;
+    height: 24px;
+    justify-content: center;
+    line-height: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    white-space: nowrap;
+    border-radius: 290486px;
+    vertical-align: top;
+
+    &.is-primary {
+        background-color: @primary;
+        color: #fff;
+    }
+
+    &.is-success {
+        background-color: @success;
+        color: #fff;
+    }
+
+    &.is-warning {
+        background-color: @warning;
+        color: #fff;
+    }
+
+    &.is-danger {
+        background-color: @danger;
+        color: #fff;
+    }
+
+    &.is-info {
+        background-color: @info;
+        color: #fff;
+    }
+
+    &.is-small {
+        font-size: 11px;
+        height: 20px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    &.is-medium {
+        font-size: 14px;
+        height: 32px;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    &.is-large {
+        font-size: 18px;
+        height: 40px;
+        line-height: 24px;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .delete {
+        margin-left: 4px;
+        margin-right: -6px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background-color: hsla(0,0%,4%,.1);
+        border: none;
+        border-radius: 290486px;
+        cursor: pointer;
+        display: inline-block;
+        height: 24px;
+        outline: none;
+        position: relative;
+        vertical-align: top;
+        width: 24px;
+
+        &.is-small {
+          height: 16px;
+          width: 16px;
+        }
+
+        &:before {
+          transform: rotate(45deg);
+          background-color: #fff;
+          content: "";
+          display: block;
+          height: 2px;
+          left: 50%;
+          margin-left: -25%;
+          margin-top: -1px;
+          position: absolute;
+          top: 50%;
+          width: 50%;
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+          background-color: #fff;
+          content: "";
+          display: block;
+          height: 2px;
+          left: 50%;
+          margin-left: -25%;
+          margin-top: -1px;
+          position: absolute;
+          top: 50%;
+          width: 50%;
+        }
+    }
+}
+.is-square{
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}

@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import { addClass } from 'src/utils/EasyDom'
+// import { addClass } from 'src/utils/EasyDom'
+import EasyQuery from 'src/utils/EasyQuery'
 
 export default {
   name: 'k-col',
@@ -76,9 +77,11 @@ export default {
     ary.forEach(item => {
       const val = this[item]
       if (item === 'span') {
-        addClass($el, `k-col-${val}_${that.columnCount}`)
+        // addClass($el, `k-col-${val}_${that.columnCount}`)
+        EasyQuery.use($el).addClass(`k-col-${val}_${that.columnCount}`)
       } else {
-        addClass($el, `k-col-${item}-${val}_${that.columnCount}`)
+        // addClass($el, `k-col-${item}-${val}_${that.columnCount}`)
+        EasyQuery.use($el).addClass(`k-col-${item}-${val}_${that.columnCount}`)
       }
     })
   },

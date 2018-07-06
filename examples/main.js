@@ -6,10 +6,13 @@ import router from './router'
 import KnightUI from 'src/index'
 import 'packages/theme-default/src/index.less'
 // 用于渲染markdown
-import 'examples/assets/md.less'
+import 'examples/assets/less/index.less'
 import demoBlock from './components/demo-block.vue'
+import AnimateExample from './components/AnimateExample.vue'
 
 Vue.component('demo-block', demoBlock)
+Vue.component('animate-demo', AnimateExample)
+
 Vue.use(KnightUI)
 Vue.config.productionTip = false
 

@@ -13,7 +13,8 @@
 </template>
 
 <script>
-import { hasClass, addClass, removeClassToSelectors, getAttribute, show } from 'src/utils/EasyDom'
+// import { hasClass, addClass, removeClassToSelectors, getAttribute, show } from 'src/utils/EasyDom'
+import EasyQuery from 'src/utils/EasyQuery'
 export default {
   name: 'k-tab',
   props: {
@@ -57,7 +58,8 @@ export default {
       // 确定第一个激活状态的tab
       const firstTab = this.getActiveTag()
       // 增加样式
-      addClass(firstTab, 'k-tab__active')
+      // addClass(firstTab, 'k-tab__active')
+      EasyQuery.use(firstTab).addClass('k-tab__active')
       // 设置滑块宽度
       this.setActiveBarWidth(firstTab.offsetWidth)
       // 设置滑块偏移量
@@ -95,20 +97,27 @@ export default {
     },
     // 显示激活的Tab内容
     showActiveContent () {
-      show(this.tabContentArray[this.activeIndex])
+      // show(this.tabContentArray[this.activeIndex])
+      EasyQuery.use(this.tabContentArray[this.activeIndex]).show()
     },
     // 切换标签
     switchTab (e) {
       const currentTarget = e.target
       // 若当前选项已处于激活状态
-      if (hasClass(currentTarget, 'k-tab__active')) {
+      // if (hasClass(currentTarget, 'k-tab__active')) {
+      //   return false
+      // }
+      if (EasyQuery.use(currentTarget).hasClass('k-tab__active')) {
         return false
       }
       // 设置当前索引
-      this.activeIndex = getAttribute(currentTarget, 'index')
+      // this.activeIndex = getAttribute(currentTarget, 'index')
+      this.activeIndex = EasyQuery.use(currentTarget).getAttribute('index')
       // 把选项卡中所有的激活状态移除
-      removeClassToSelectors(this.tabTagArray, 'k-tab__active')
-      addClass(currentTarget, 'k-tab__active')
+      // removeClassToSelectors(this.tabTagArray, 'k-tab__active')
+      EasyQuery.use(this.tabTagArray).removeClass('k-tab__active')
+      // addClass(currentTarget, 'k-tab__active')
+      EasyQuery.use(currentTarget).addClass('k-tab__active')
       // 设置滑块宽度
       this.setActiveBarWidth(currentTarget.offsetWidth)
       // 设置滑块偏移量

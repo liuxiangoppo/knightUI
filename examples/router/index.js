@@ -5,6 +5,12 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    { path: '/', redirect: '/introduce' },
+    {
+      path: '/introduce',
+      name: 'introduce',
+      component: r => require.ensure([], () => r(require('../docs/introduce.md')))
+    },
     {
       path: '/layouts',
       name: 'layouts',
@@ -63,17 +69,122 @@ export default new Router({
     {
       path: '/notification',
       name: 'notification',
-      component: r => require.ensure([], () => r(require('../docs/Notify.vue')))
+      component: r => require.ensure([], () => r(require('../docs/notify.md')))
     },
     {
       path: '/modal',
       name: 'modal',
-      component: r => require.ensure([], () => r(require('../docs/modal.vue')))
+      component: r => require.ensure([], () => r(require('../docs/modal.md')))
+    },
+    // {
+    //   path: '/messagebox',
+    //   name: 'messagebox',
+    //   component: r => require.ensure([], () => r(require('../docs/MessageBox.vue')))
+    // },
+    {
+      path: '/affix',
+      name: 'affix',
+      component: r => require.ensure([], () => r(require('../docs/affix.md')))
     },
     {
-      path: '/messagebox',
-      name: 'messagebox',
-      component: r => require.ensure([], () => r(require('../docs/MessageBox.vue')))
+      path: '/scrollto',
+      name: 'scrollto',
+      component: r => require.ensure([], () => r(require('../docs/scrollto.md')))
+    },
+    {
+      path: '/install',
+      name: 'install',
+      component: r => require.ensure([], () => r(require('../docs/install.md')))
+    },
+    {
+      path: '/quickstart',
+      name: 'quickstart',
+      component: r => require.ensure([], () => r(require('../docs/quickstart.md')))
+    },
+    {
+      path: '/updatelog',
+      name: 'updatelog',
+      component: r => require.ensure([], () => r(require('../docs/updatelog.md')))
+    },
+    {
+      path: '/timeline',
+      name: 'timeline',
+      component: r => require.ensure([], () => r(require('../docs/timeline.md')))
+    },
+    {
+      path: '/transition',
+      name: 'transition',
+      component: r => require.ensure([], () => r(require('../docs/transition.md')))
+    },
+    {
+      path: '/dropdown',
+      name: 'dropdown',
+      component: r => require.ensure([], () => r(require('../docs/dropdown.md')))
+    },
+    {
+      path: '/alert',
+      name: 'alert',
+      component: r => require.ensure([], () => r(require('../docs/alert.md')))
+    },
+    {
+      path: '/collapse',
+      name: 'collapse',
+      component: r => require.ensure([], () => r(require('../docs/collapse.md')))
+    },
+    {
+      path: '/style',
+      name: 'style',
+      component: r => require.ensure([], () => r(require('../docs/style.md')))
+    },
+    {
+      path: '/aside',
+      name: 'aside',
+      component: r => require.ensure([], () => r(require('../docs/aside.md')))
+    },
+    {
+      path: '/table',
+      name: 'table',
+      component: r => require.ensure([], () => r(require('../docs/table.md')))
+    },
+    {
+      path: '/pagination',
+      name: 'pagination',
+      component: r => require.ensure([], () => r(require('../docs/pagination.md')))
+    },
+    {
+      path: '/step',
+      name: 'step',
+      component: r => require.ensure([], () => r(require('../docs/step.md')))
+    },
+    {
+      path: '/tag',
+      name: 'tag',
+      component: r => require.ensure([], () => r(require('../docs/tag.md')))
+    },
+    {
+      path: '/popover',
+      name: 'popover',
+      component: r => require.ensure([], () => r(require('../docs/popover.md')))
+    },
+    {
+      path: '/form',
+      name: 'form',
+      component: r => require.ensure([], () => r(require('../docs/form.md')))
+    },
+    {
+      path: '/card',
+      name: 'card',
+      component: r => require.ensure([], () => r(require('../docs/card.md')))
+    },
+    {
+      path: '/progress',
+      name: 'progress',
+      component: r => require.ensure([], () => r(require('../docs/progress.md')))
+    },
+    {
+      path: '/popconfirm',
+      name: 'popconfirm',
+      component: r => require.ensure([], () => r(require('../docs/popconfirm.md')))
     }
   ]
 })

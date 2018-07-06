@@ -1,5 +1,5 @@
 <template>
-  <div class="k-menu" :style="menuStyle">
+  <div class="k-menu" :style="menuStyle" :class="menuWrapperClass">
     <!--若是通过json来生成菜单内容 则使用以下dom-->
     <ul class="k-menu-group" v-if="hasJson" :class="menuNavClass">
       <menu-item v-for="(menu, index) in menus" :key="index" :menu="menu">
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import EventBus from 'src/utils/EventBus'
 import MenuItem from './MenuItem'
 export default {
   name: 'k-menu',
@@ -56,6 +55,11 @@ export default {
     defaultActive: {
       type: String,
       default: ''
+    },
+    // 自定义class
+    custormClass: {
+      type: String,
+      default: ''
     }
   },
   // provide / inject 好东西!
@@ -63,23 +67,6 @@ export default {
     return {
       rootMenu: this
     }
-  },
-  watch: {
-    // collapse (newVal) {
-    //   if (newVal) {
-    //     this.emitCollapse(true)
-    //   }
-    //   this.emitCollapse(newVal)
-    // },
-    // mode (newVal) {
-    //   this.emitMode(newVal)
-    // },
-    // activeTextColor (newVal) {
-    //   this.emitActiveTextColor(newVal)
-    // },
-    // activeBackColor (newVal) {
-    //   this.emitActiveBackColor(newVal)
-    // }
   },
   components: {
     MenuItem
@@ -93,6 +80,9 @@ export default {
         backgroundColor: this.backgroundColor
       }
     },
+    menuWrapperClass () {
+      return this.custormClass
+    },
     menuNavClass () {
       if (this.mode === 'horizontal') {
         return 'k-menu-horizontal'
@@ -102,44 +92,7 @@ export default {
     }
   },
   mounted () {
-    this.init()
-  },
-  methods: {
-    init () {
-      // this.emitCollapse(this.collapse)
-      // this.emitMode(this.mode)
-      // this.emitTextColor(this.textColor)
-      // this.emitActiveTextColor(this.activeTextColor)
-      // this.emitActiveBackColor(this.activeBackColor)
-    },
-    emitCollapse (collapse) {
-      if (collapse) {
-        EventBus.emit('collapse', { collapse: true })
-      }
-    },
-    emitMode (mode) {
-      if (mode === 'horizontal') {
-        EventBus.emit('mode', { mode: 'horizontal' })
-      }
-    },
-    // 发送事件textColor
-    emitTextColor (color) {
-      EventBus.emit('textColor', { textColor: color })
-    },
-    // 发送事件activeTextColor
-    emitActiveTextColor (activeTextColor) {
-      // Todo
-      EventBus.emit('activeTextColor', {
-        activeTextColor: activeTextColor
-      })
-    },
-    // 发送事件activeBackColor
-    emitActiveBackColor (activeBackColor) {
-      // Todo
-      EventBus.emit('activeBackColor', {
-        activeBackColor: activeBackColor
-      })
-    }
+    // this.init()
   }
 }
 </script>

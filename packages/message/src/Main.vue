@@ -1,6 +1,10 @@
 <template>
   <transition name="k-message-fade">
-    <div class="k-message" v-show="visible" @mouseenter="clearTimer" @mouseleave="startTimer">哈哈哈哈哈我是内容</div>
+    <div class="k-message radius3px common-box-shadow" :class="messageClass" v-show="visible" @mouseenter="clearTimer" @mouseleave="startTimer">
+      <p v-if="!allowUseHTML">{{ content }}</p>
+      <p v-else v-html="content"></p>
+      <div class="message-closeable" v-show="!closed" @click="close">×</div>
+    </div>
   </transition>
 </template>
 
@@ -16,7 +20,7 @@ export default {
       // 内容
       content: '',
       // 皮肤
-      theme: '',
+      type: '',
       // 允许是否使用HTML
       allowUseHTML: false,
       // 计时器
@@ -37,7 +41,11 @@ export default {
   },
   computed: {
     messageClass () {
-      return []
+      let ary = []
+      if (this.type !== '') {
+        ary.push(`is-${this.type}`)
+      }
+      return ary
     }
   },
   mounted () {

@@ -1,84 +1,68 @@
-.k-tip {
-    display: block;
-    position: absolute;
-    background-color: #3695cc;
-    padding: 7px;
-    .radius3px();
+.tooltip{
+    background: #383838;
     color: #fff;
+    padding: 8px 10px;
+    font-size: 12px;
+    /*font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;*/
+    line-height: 12px;
     white-space: nowrap;
-    z-index: 19900420;
-    .common-box-shadow();
-}
-// 提示框方向 向左
-.k-tip-direction__left {
-    transform: translate(-100%, -50%);
-
-    .k-tip-arrow {
-        display: inline-block;
-        position: absolute;
-        content: '';
-        width: 0;
-        height: 0;
-        top: 50%;
-        right: -10px;
-        border-top: 10px solid transparent;
-        border-left: 15px solid #3695CC;
-        border-bottom: 10px solid transparent;
-        transform: translate(0, -50%);
+    /*text-shadow: 0 -1px 0 #000;*/
+    box-shadow: 4px 4px 8px rgba(0,0,0,.3);
+  }
+  .tooltip-arrow{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    margin: 5px;
+  }
+  .tooltip, .tooltip-arrow{
+    z-index: 1000000;
+    pointer-events: none;
+  }
+  .tooltip[x-placement^="bottom"]{
+    margin-top: 8px;
+    .tooltip-arrow {
+      border-width: 0 5px 5px 5px;
+      border-color: transparent transparent #383838 transparent;
+      top: -5px;
+      left: calc(50% - 5px);
+      margin-top: 0;
+      margin-bottom: 0;
     }
-}
-// 提示框方向 向右
-.k-tip-direction__right {
-    transform: translate(0, -50%);
-
-    .k-tip-arrow {
-        display: inline-block;
-        position: absolute;
-        content: '';
-        width: 0;
-        height: 0;
-        top: 50%;
-        left: -10px;
-        border-top: 10px solid transparent;
-        border-right: 15px solid #3695CC;
-        border-bottom: 10px solid transparent;
-        transform: translate(0, -50%);
+  }
+  .tooltip[x-placement^="top"]{
+    margin-bottom: 8px;
+    .tooltip-arrow {
+      border-width: 5px 5px 0 5px;
+      border-color: #383838 transparent transparent transparent;
+      bottom: -5px;
+      left: calc(50% - 5px);
+      margin-top: 0;
+      margin-bottom: 0;
     }
-
-}
-// 提示框方向 向上
-.k-tip-direction__top {
-    transform: translate(-50%, -100%);
-
-    .k-tip-arrow {
-        display: inline-block;
-        position: absolute;
-        content: '';
-        width: 0;
-        height: 0;
-        left: 50%;
-        bottom: -10px;
-        border-top: 15px solid #3695CC;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        transform: translate(-50%, 0);
+  }
+  
+  .tooltip[x-placement^="right"]{
+    margin-left: 8px;
+    .tooltip-arrow {
+      border-width: 5px 5px 5px 0;
+      border-color: transparent #383838 transparent transparent;
+      left: -5px;
+      top: calc(50% - 5px);
+      margin-left: 0;
+      margin-right: 0;
     }
-}
-// 提示框方向 向下
-.k-tip-direction__bottom {
-    transform: translate(-50%, 100%);
-
-    .k-tip-arrow {
-        display: inline-block;
-        position: absolute;
-        content: '';
-        width: 0;
-        height: 0;
-        left: 50%;
-        top: -10px;
-        border-bottom: 15px solid #3695CC;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        transform: translate(-50%, 0);
+  }
+  
+  .tooltip[x-placement^="left"]{
+    margin-right: 8px;
+    .tooltip-arrow {
+      border-width: 5px 0 5px 5px;
+      border-color: transparent transparent transparent #383838;
+      right: -5px;
+      top: calc(50% - 5px);
+      margin-left: 0;
+      margin-right: 0;
     }
-}
+  }

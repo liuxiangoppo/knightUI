@@ -1,115 +1,361 @@
-// 按钮基础样式
-.k-button {
-    display: inline-block;
-    padding: 6px 12px;
-    font-weight: 400;
+.button {
+    -webkit-appearance: none;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    box-sizing:border-box;
+    border-radius: 3px;
+    color: #363636;
+    display: inline-flex;
+    font-size: @button-font-size;
+    height: 32px;
+    justify-content: flex-start;
+    line-height: 24px;
+    position: relative;
+    vertical-align: top;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
     text-align: center;
     white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    user-select: none;
-    background-image: none;
-    font-size: @button-font-size;
     outline: none;
-}
 
-.k-buttongroup {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    // margin
-    .k-button-margin();
-
-    .k-button {
-        position: relative;
-        float: left;
-        margin: 0 0 0 -1px; // 需要去掉margin 否则按钮之间不会挤在一起
+    &:focus,&:hover,&.is-active {
+        color: #363636;
+        text-decoration: none;
     }
-
-    // default、primary、success、warning、info、danger等样式在按钮组下需要单独调整一下其边框的样式
+    &:hover,&:focus,&.is-active {
+        border-color: #b5b5b5;
+        text-decoration: none;
+    }
+    // disabled时的样式
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        &:hover {
+            // 在按钮禁用状态下 调整hover伪类的样式.
+            border: 1px solid #dbdbdb;
+            color: #363636;
+            background-color: #fff;
+        }
+    }
+    &.is-loading {
+        color: transparent!important;
+        pointer-events: none;
+        &:after {
+            animation: rotation 0.5s linear infinite;
+            border: 2px solid #dbdbdb;
+            border-radius: 290486px;
+            border-right-color: transparent;
+            border-top-color: transparent;
+            content: "";
+            display: block;
+            height: 14px;
+            width: 14px;
+            left: 50%;
+            margin-left: -8px;
+            margin-top: -8px;
+            top: 50%;
+            position: absolute!important;
+        }
+    }
+    &.is-large {
+        font-size: 22px;
+        height: 48px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    &.is-medium {
+        font-size: 18px;
+        height: 40px;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+    &.is-small {
+        font-size: 11px;
+        height: 24px;
+        padding-left: 6px;
+        padding-right: 6px;
+        line-height: 16px;
+    }
 }
 
-// 按钮圆角样式
-.k-button-radius0 {
-    .k-button-radius(0);
+.button {
+    &.is-primary {
+        background-color:@primary;
+        border-width: 0;
+        color: #fff;
+        &:focus,&:hover,&.is-active {
+            background-color: @primary-hover;
+            border-color: transparent;
+            color: #fff;
+        }
+        &.is-loading {
+            color: transparent!important;
+            pointer-events: none;
+            &:after {
+                animation: rotation 0.5s linear infinite;
+                border: 2px solid #dbdbdb;
+                border-radius: 290486px;
+                border-right-color: transparent;
+                border-top-color: transparent;
+                content: "";
+                display: block;
+                height: 14px;
+                width: 14px;
+                left: 50%;
+                margin-left: -8px;
+                margin-top: -8px;
+                top: 50%;
+                position: absolute!important;
+            }
+        }
+        &:disabled {
+            &:hover {
+                // 在按钮禁用状态下 调整hover伪类的样式.
+                background-color:@primary;
+                border-width: 0;
+                color: #fff;
+            }
+        }
+        &.is-border {
+            background-color: transparent;
+            border-color: @primary;
+            border-width: 1px;
+            color: @primary;
+    
+            &:hover {
+                background-color:@primary;
+                color: #fff;
+            }
+        }
+    }
+    &.is-info {
+        background-color:@info;
+        border-width: 0;
+        color: #fff;
+        &:focus,&:hover,&.is-active {
+            background-color: @info-hover;
+            border-color: transparent;
+            color: #fff;
+        }
+        &.is-loading {
+            color: transparent!important;
+            pointer-events: none;
+            &:after {
+                animation: rotation 0.5s linear infinite;
+                border: 2px solid #dbdbdb;
+                border-radius: 290486px;
+                border-right-color: transparent;
+                border-top-color: transparent;
+                content: "";
+                display: block;
+                height: 14px;
+                width: 14px;
+                left: 50%;
+                margin-left: -8px;
+                margin-top: -8px;
+                top: 50%;
+                position: absolute!important;
+            }
+        }
+        &:disabled {
+            &:hover {
+                background-color:@info;
+                border-width: 0;
+                color: #fff;
+            }
+        }
+        &.is-border {
+            background-color: transparent;
+            border-color: @info;
+            border-width: 1px;
+            color: @info;
+    
+            &:hover {
+                background-color:@info;
+                color: #fff;
+            }
+        }
+    }
+    &.is-success {
+        background-color:@success;
+        border-width: 0;
+        color: #fff;
+        &:focus,&:hover,&.is-active {
+            background-color: @success-hover;
+            border-color: transparent;
+            color: #fff;
+        }
+        &.is-loading {
+            color: transparent!important;
+            pointer-events: none;
+            &:after {
+                animation: rotation 0.5s linear infinite;
+                border: 2px solid #dbdbdb;
+                border-radius: 290486px;
+                border-right-color: transparent;
+                border-top-color: transparent;
+                content: "";
+                display: block;
+                height: 14px;
+                width: 14px;
+                left: 50%;
+                margin-left: -8px;
+                margin-top: -8px;
+                top: 50%;
+                position: absolute!important;
+            }
+        }
+        &:disabled {
+            &:hover {
+                background-color:@success;
+                border-width: 0;
+                color: #fff;
+            }
+        }
+        &.is-border {
+            background-color: transparent;
+            border-color: @success;
+            border-width: 1px;
+            color: @success;
+    
+            &:hover {
+                background-color:@success;
+                color: #fff;
+            }
+        }
+    }
+    &.is-warning {
+        background-color:@warning;
+        border-width: 0;
+        color: #fff;
+        &:focus,&:hover,&.is-active {
+            background-color: @warning-hover;
+            border-color: transparent;
+            color: #fff;
+        }
+        &.is-loading {
+            color: transparent!important;
+            pointer-events: none;
+            &:after {
+                animation: rotation 0.5s linear infinite;
+                border: 2px solid #dbdbdb;
+                border-radius: 290486px;
+                border-right-color: transparent;
+                border-top-color: transparent;
+                content: "";
+                display: block;
+                height: 14px;
+                width: 14px;
+                left: 50%;
+                margin-left: -8px;
+                margin-top: -8px;
+                top: 50%;
+                position: absolute!important;
+            }
+        }
+        &:disabled {
+            &:hover {
+                background-color:@warning;
+                border-width: 0;
+                color: #fff;
+            }
+        }
+        &.is-border {
+            background-color: transparent;
+            border-color: @warning;
+            border-width: 1px;
+            color: @warning;
+    
+            &:hover {
+                background-color:@warning;
+                color: #fff;
+            }
+        }
+    }
+    &.is-danger {
+        background-color:@danger;
+        border-width: 0;
+        color: #fff;
+        &:focus,&:hover,&.is-active {
+            background-color: @danger-hover;
+            border-color: transparent;
+            color: #fff;
+        }
+        &.is-loading {
+            color: transparent!important;
+            pointer-events: none;
+            &:after {
+                animation: rotation 0.5s linear infinite;
+                border: 2px solid #dbdbdb;
+                border-radius: 290486px;
+                border-right-color: transparent;
+                border-top-color: transparent;
+                content: "";
+                display: block;
+                height: 14px;
+                width: 14px;
+                left: 50%;
+                margin-left: -8px;
+                margin-top: -8px;
+                top: 50%;
+                position: absolute!important;
+            }
+        }
+        &:disabled {
+            &:hover {
+                background-color:@danger;
+                border-width: 0;
+                color: #fff;
+            }
+        }
+        &.is-border {
+            background-color: transparent;
+            border-color: @danger;
+            border-width: 1px;
+            color: @danger;
+    
+            &:hover {
+                background-color:@danger;
+                color: #fff;
+            }
+        }
+    }
 }
-// 3像素
-.k-button-radius3 {
-    .k-button-radius(3px);
-}
-// 5像素
-.k-button-radius5 {
-    .k-button-radius(5px);
-}
-// 7像素
-.k-button-radius7 {
-    .k-button-radius(7px);
-}
-// 10像素
-.k-button-radius10 {
-    .k-button-radius(10px);
-}
-// 圆形
-.k-button-radius__circle {
-    .k-button-radius(100px);
-}
 
-// Default按钮样式
-.make-button(default, #777777, none, #777777);
-.make-button-hasbg(default, #777777, #efefef, #e5e5e5);
 
-// Primary按钮样式
-.make-button(primary, #e74c3c, none, #e74c3c);
-.make-button-hasbg(primary, #ffffff, #e74c3c, #e64433);
-
-// Success按钮样式
-.make-button(success, #5cb85c, none, #5cb85c);
-.make-button-hasbg(success, #ffffff, #5cb85c, #55b555);
-
-// Info按钮样式
-.make-button(info, #5bc0de, none, #5bc0de);
-.make-button-hasbg(info, #ffffff, #5bc0de, #53bddc);
-
-// Warning按钮样式
-.make-button(warning, #f0ad4e, none, #f0ad4e);
-.make-button-hasbg(warning, #ffffff, #f0ad4e, #efa945);
-
-// Danger按钮样式
-.make-button(danger, #d9534f, none, #d9534f);
-.make-button-hasbg(danger, #ffffff, #d9534f, #d74b47);
-
-// 链接Link状态的按钮样式
-.k-button-text {
-    color: #6190e8;
-    text-decoration: none;
+.k-button-group {
+    display: flex;
+    justify-content: flex-start;
+    .button {
+        margin-right: -1px;
+        width: auto;
+        border-radius: 0;
+        
+        &:first-child {
+            border-radius: 3px 0 0 3px;
+        }
+        &:last-child {
+            border-radius: 0 3px 3px 0;
+        }
+        &:hover {
+            z-index: 2;
+        }
+    }
 }
 
-.k-button-sizing__large {
-    padding: 10px 16px;
-    font-size: 18px;
-    line-height: 1.33;
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
-
-.k-button-sizing__normal {
-    padding: 6px 12px;
-    font-size: @button-font-size;;
-    line-height: 1.43;
-}
-
-.k-button-sizing__small {
-    padding: 5px 10px;
-    font-size: @button-font-size - 1;
-    line-height: 1.5;
-}
-
-.k-button-sizing__extraSmall {
-    padding: 1px 5px;
-    font-size: @button-font-size - 1;
-    line-height: 1.5;
-}
-
-.k-button-sizing__block {
-    display: block;
-    width: 100%;
-}
-
