@@ -2,10 +2,11 @@
   <span class="dropdown">
     <slot></slot>
     <transition name="fade">
-      <div class="popover popper-dropdown" ref="popper" v-show="isShow" :style="popperStyle">
-        <div class="popover-content dropdown-content">
+      <div class="popper-dropdown" ref="popper" v-show="isShow" :style="popperStyle">
+        <div class="dropdown-content">
           <slot name="content"><div v-text="content"></div></slot>
         </div>
+        <div class="popover-arrow" x-arrow></div>
       </div>
     </transition>
   </span>
@@ -20,6 +21,7 @@ export default {
       type: String,
       default: ''
     },
+    // hover:鼠标滑过显示 | click:鼠标点击显示 | custorm:自定义显示
     trigger: {
       type: String,
       default: 'click'
@@ -30,26 +32,37 @@ export default {
     placement: {
       type: String,
       default: 'bottom'
+    },
+    visible: Boolean
+  },
+  watch: {
+    isShow (newVal) {
+      if (!newVal) {
+        // isShow = false
+        this.popperTimer = setTimeout(() => {
+          // 当隐藏的时候 销毁destroy
+          this.popper.destroy()
+          this.popper = null
+        }, 0)
+      }
+    },
+    visible (newVal) {
+      console.log(newVal)
+      // 如果trigger触发方式为custorm 且visible的值为true的话
+      // 显示dropdown
+      if (newVal) {
+        this.createInstance()
+        this.showPopper()
+      } else {
+        // 否则隐藏dropdown
+        this.isShow = false
+      }
     }
   },
   methods: {
-    // add delay
-    hidePopper (cb) {
-      if (this.trigger !== 'hover') {
-        this.isShow = false
-      }
-      this.timer = setTimeout(() => {
-        this.isShow = false
-        this.popperTimer = setTimeout(() => {
-          // destroy popper when hide
-          this.popper.destroy()
-          this.popper = null
-
-          if (cb && typeof cb === 'function') {
-            cb()
-          }
-        }, 300)
-      }, 300)
+    // 增加延迟
+    hidePopper () {
+      this.isShow = false
     }
   },
   computed: {
@@ -61,17 +74,18 @@ export default {
     }
   },
   mounted () {
+    // 若VISIBLE为true的话
+    // 显示dropdown
+    if (this.visible) {
+      this.createInstance()
+      this.showPopper()
+    }
     // 监听dropdown-menu-item的点击事件
-    // 监听到 就隐藏popper
+    // 隐藏下拉菜单
     this.$on('menu-item-click', (params) => {
       params.event.stopPropagation()
-      this.hidePopper(() => {
-        // 如果点击的dropdown-menu-item组件有to属性
-        // 则根据to的属性值 进行路由跳转
-        if (params.to) {
-          this.$router.push(params.to)
-        }
-      })
+      // 隐藏下拉菜单
+      this.isShow = false
     })
   }
 }

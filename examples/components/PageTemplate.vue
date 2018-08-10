@@ -54,6 +54,8 @@
                         <li><router-link to="/pagination" class="menuItem paddingLeft30 opacity75">Pagination 分页</router-link></li>
                         <li><router-link to="/step" class="menuItem paddingLeft30 opacity75">Steps 步骤条</router-link></li>
                         <li><router-link to="/tab" class="menuItem paddingLeft30 opacity75">Tabs 选项卡</router-link></li>
+                        <li><router-link to="/menu" class="menuItem paddingLeft30 opacity75">Menu 导航菜单</router-link></li>
+                        <li><router-link to="/tree" class="menuItem paddingLeft30 opacity75">Tree 树状列表</router-link></li>
                       </ul>
                     </li>
                     <li>
@@ -80,11 +82,20 @@
                       <span class="menuGroup paddingLeft15 grey">FORM</span>
                       <ul>
                         <li><router-link to="/form" class="menuItem paddingLeft30 opacity75">Form 表单</router-link></li>
+                        <li><router-link to="/input" class="menuItem paddingLeft30 opacity75">Input 文本</router-link></li>
                         <li><router-link to="" class="menuItem paddingLeft30 opacity75">InputNumber 数字输入框</router-link></li>
-                        <li><router-link to="" class="menuItem paddingLeft30 opacity75">Radio 单选框</router-link></li>
-                        <li><router-link to="" class="menuItem paddingLeft30 opacity75">Checkbox 复选框</router-link></li>
+                        <li><router-link to="/radio" class="menuItem paddingLeft30 opacity75">Radio 单选框</router-link></li>
+                        <li><router-link to="/upload" class="menuItem paddingLeft30 opacity75">Upload 文件上传</router-link></li>
+                        <li><router-link to="/checkbox" class="menuItem paddingLeft30 opacity75">Checkbox 复选框</router-link></li>
+                        <li><router-link to="/select" class="menuItem paddingLeft30 opacity75">Select 选择框</router-link></li>
                         <li><router-link to="" class="menuItem paddingLeft30 opacity75">Switch 开关</router-link></li>
                         <li><router-link to="" class="menuItem paddingLeft30 opacity75">DataPicker 日期选择</router-link></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <span class="menuGroup paddingLeft15 grey">Example</span>
+                      <ul>
+                        <li><router-link to="/table" class="menuItem paddingLeft30 opacity75">综合示例</router-link></li>
                       </ul>
                     </li>
                   </ul>

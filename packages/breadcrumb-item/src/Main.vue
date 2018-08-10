@@ -1,13 +1,14 @@
 <template>
   <li class="k-breadcrumb-nav-item k-breadcrumb-nav-item__normal" :class="isActive">
       <span class="text" v-on:click="direct"><slot></slot></span>
-      <span v-show="!isLast" class="separator">{{ separator }}</span>
+      <span v-show="!isLast" class="separator" v-html="separator"></span>
   </li>
 </template>
 
 <script>
 export default {
   name: 'kBreadcrumbItem',
+  inject: ['breadCrumb'],
   data: function () {
     return {
       separator: '/',
@@ -36,6 +37,9 @@ export default {
   computed: {
     isActive () {
       return this.isLast ? 'k-breadcrumb-nav-item__active' : 'k-breadcrumb-nav-item__normal'
+    },
+    hasSeparatorSlot () {
+      return this.breadCrumb.$slots.separator !== undefined
     }
   },
   methods: {

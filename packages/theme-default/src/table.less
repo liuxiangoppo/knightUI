@@ -1,14 +1,56 @@
+.k-datatable-wrapper {
+  border: 1px solid #e8eaec;
+  border-top: 0;
+  border-left: 0;
+  // 左侧的冻结区域
+  .table-frozen-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    box-shadow: 6px 0 6px -4px rgba(0,0,0,.2);
+  }
+  .table-frozen-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    box-shadow: -6px 0 6px -4px rgba(0,0,0,.2);
+
+    .data-table-header {
+      clear: both;
+      .data-table {
+        float: right;
+
+        th, td {
+          border-right: 0;
+        }
+      }
+    }
+    .data-table-main {
+      clear: both;
+      .data-table {
+        float: right;
+
+        th, td {
+          border-right: 0;
+        }
+      }
+    }
+  }
+}
 .data-table{
     background-color: #fff;
     color: #5e6d82;
-    font-size: 14px;
+    font-size: @fontSize;
     border-collapse: collapse;
+    table-layout: fixed;
     width: 100%;
-
+    border-collapse: collapse;
     // 是否带有边框
     &.is-bordered {
       th, td {
-        border: 1px solid #e9e9e9;
+        border: 1px solid #e8eaec;
       }
     }
     // 是否带有斑马线
@@ -20,17 +62,26 @@
       }
     }
     // wtf
-    &.is-narrow {}
+    &.is-narrow {
+
+    }
 
     th {
-      border-bottom: 1px solid #e9e9e9;
-      background-color: #FAFBFC;
-      padding: 10px 8px;
+      background-color: #F8F8F9;
+      padding: 5px 8px;
+      font-weight: 500;
+      border-right: 1px solid #e8eaec;
+      border-bottom: 1px solid #e8eaec;
+      margin: 0;
+      // color: #515a6e;
+      &:last-child {
+        border-right: 0;
+      }
     }
 
     td {
       border-bottom: 1px solid #e9e9e9;
-      padding: 10px 8px;
+      padding: 5px 8px;
     }
 
     td, th{
@@ -57,6 +108,12 @@
         &:hover {
           background-color: #f5f5f5;
         }
+
+        &:last-child {
+          td {
+            border-bottom: 0;
+          }
+        }
       }
     }
     .sortable{
@@ -67,21 +124,36 @@
     }
     .sort-trigger{
       position: absolute;
-      right: 5px;
-      top: 50%;
-      margin-top: -10px;
-      .fa{
+      // right: 5px;
+      // top: 50%;
+      margin-top: 1px;
+      .k-icon{
         vertical-align: baseline;
+        display: inline-block;
+        width: 3px;
       }
-      &.sort-asc{
-        margin-top: -6px;
+      &.sortasc{
+        // margin-top: -6px;
+        .icon-asc {
+          color: #1296db;
+        }
+        .icon-desc {
+          color: auto;
+        }
       }
-      &.sort-desc{
-        margin-top: -13px;
+      &.sortdesc{
+        // margin-top: -13px;
+        .icon-asc {
+          color: auto;
+        }
+        .icon-desc {
+          color: #1296db;
+        }
       }
     }
   }
   .data-table-header{
+    box-sizing: border-box;
     .data-table{
       margin-bottom: 0;
       th{

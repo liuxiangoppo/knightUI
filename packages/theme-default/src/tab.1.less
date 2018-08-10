@@ -1,0 +1,102 @@
+.k-tab {
+    box-sizing: border-box;
+    // 标签部分
+    .k-tab-labels {
+        border-color: #e5e5e5;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        .clearfix();
+
+        .k-tab-label {
+            position: relative;
+            display: inline-block;
+            margin-bottom: -1px;
+            padding: 10px 15px;
+            background-color: #FFF;
+            color: #555;
+            cursor: pointer;
+            font-size: @fontSize;
+        }
+
+        .k-tab__active-bar {
+            position: absolute;
+            height: 3px;
+            background-color: #409eff;
+            bottom: -1px;
+            left: 0;
+            z-index: 1;
+            transition: all .3s
+        }
+    }
+    .k-tabcontent__wrapper {
+        background: #fff;
+        padding: 15px 10px;
+        margin-bottom: 20px;
+        border-top: 0;
+        overflow: hidden;
+        .clearfix();
+        // 所有的content先默认隐藏
+        .k-tabContent {
+            display: none;
+        }
+    }
+}
+
+// 扁平化风格
+.k-tab__flat {
+    .k-tab-labels {
+        .k-tab-label {
+            margin-bottom: 0;
+        }
+        .k-tab__active {
+            color: #409eff;
+            font-weight: 400;
+        }
+    }
+}
+
+// 选项卡式风格
+.k-tab__card {
+    .k-tab-labels {
+        .k-tab-label {
+            border: 1px solid #ddd;
+            margin-left: -1px;
+        }
+        .k-tab__active {
+            color: #409eff;
+            font-weight: 400;
+            border-bottom-color: transparent;
+        }
+        .k-tab__active-bar {
+            display: none !important;
+        }
+    }
+    .k-tab-labels:first-child {
+        border-top-left-radius: 5px;
+    }
+}
+
+// 卡片化风格
+.k-tab__border-card {
+    border: 1px solid #ddd;
+    .common-box-shadow();
+    .k-tab-labels {
+        background-color: #f5f7fa;
+        border-bottom: 1px solid #e4e7ed;
+        .k-tab-label {
+            border: 1px solid #ddd;
+            border-top: none;
+            background-color: transparent;
+            margin-left: -1px;
+        }
+        .k-tab__active {
+            background-color: #FFF;
+            color: #409eff;
+            font-weight: 400;
+            border-bottom-color: transparent;
+        }
+        .k-tab__active-bar {
+            display: none !important;
+        }
+    }
+}

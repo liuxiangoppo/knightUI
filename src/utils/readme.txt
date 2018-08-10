@@ -1,0 +1,1 @@
+最后发版的时候 需要删掉EventBus.js以及EasyDom.js 这两个文件。

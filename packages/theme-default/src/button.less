@@ -14,9 +14,6 @@
     position: relative;
     vertical-align: top;
     -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     cursor: pointer;
     justify-content: center;
@@ -84,6 +81,10 @@
         padding-right: 6px;
         line-height: 16px;
     }
+    &.is-block {
+        display: flex;
+        width: 100%;
+    }
 }
 
 .button {
@@ -135,6 +136,14 @@
                 color: #fff;
             }
         }
+        &.is-plain {
+            color: @primary;
+
+            &:hover,&:focus {
+                background-color: #f2f2f2;
+                color: @primary;
+            }
+        }
     }
     &.is-info {
         background-color:@info;
@@ -181,6 +190,14 @@
             &:hover {
                 background-color:@info;
                 color: #fff;
+            }
+        }
+        &.is-plain {
+            color: @info;
+
+            &:hover,&:focus {
+                background-color: #f2f2f2;
+                color: @info;
             }
         }
     }
@@ -231,6 +248,14 @@
                 color: #fff;
             }
         }
+        &.is-plain {
+            color: @success;
+
+            &:hover,&:focus {
+                background-color: #f2f2f2;
+                color: @success;
+            }
+        }
     }
     &.is-warning {
         background-color:@warning;
@@ -277,6 +302,14 @@
             &:hover {
                 background-color:@warning;
                 color: #fff;
+            }
+        }
+        &.is-plain {
+            color: @warning;
+
+            &:hover,&:focus {
+                background-color: #f2f2f2;
+                color: @warning;
             }
         }
     }
@@ -327,6 +360,22 @@
                 color: #fff;
             }
         }
+        &.is-plain {
+            color: @danger;
+
+            &:hover,&:focus {
+                background-color: #f2f2f2;
+                color: @danger;
+            }
+        }
+    }
+    &.is-plain {
+        border-width: 0;
+        background-color: inherit;
+
+        &:hover {
+            background-color: #f2f2f2;
+        }
     }
 }
 
@@ -348,6 +397,21 @@
         &:hover {
             z-index: 2;
         }
+    }
+    .is-primary {
+        border: 1px solid @primary-hover;
+    }
+    .is-success {
+        border: 1px solid @success-hover;
+    }
+    .is-danger {
+        border: 1px solid @danger-hover;
+    }
+    .is-warning {
+        border: 1px solid @warning-hover;
+    }
+    .is-info {
+        border: 1px solid @info-hover;
     }
 }
 

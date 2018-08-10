@@ -30,11 +30,13 @@ export default {
   },
   methods: {
     handleItemClick (e) {
-      this.$emit('click', null)
-      this.dispatch('k-dropdown', 'menu-item-click', {
-        event: e,
-        to: this.to
-      })
+      // this.$emit('click', null)
+      // this.dispatch('k-dropdown', 'menu-item-click', {
+      //   event: e,
+      //   to: this.to
+      // })
+      this.$emit('click', e)
+      this.$router.push(this.to)
     }
   }
 }

@@ -1,101 +1,334 @@
-.k-tab {
-    box-sizing: border-box;
-    // 标签部分
-    .k-tab-labels {
-        border-color: #e5e5e5;
-        border-bottom: 1px solid #ddd;
-        position: relative;
-        .clearfix();
+.k-tabs {
+    position: relative;
+    display: flex;
+    flex: 1;
+    -webkit-touch-callout: none;
+    user-select: none;
+    align-items: stretch;
+    justify-content: space-between;
+    line-height: 24px;
+    overflow: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
 
-        .k-tab-label {
-            position: relative;
-            display: inline-block;
+    .tab-list {
+      display: flex;
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex: 0 1 auto;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0;
+      border-bottom: 1px solid #dbdbdb;
+      margin: 0;
+
+      li{
+        padding: 0;
+        margin: 0;
+        line-height: 24px;
+        list-style: none;
+
+        a {
+            align-items: center;
+            border-bottom: 1px solid #dbdbdb;
+            color: #4a4a4a;
+            display: flex;
+            justify-content: center;
             margin-bottom: -1px;
-            padding: 10px 15px;
-            background-color: #FFF;
-            color: #555;
+            padding: 6px 12px;
+            vertical-align: top;
             cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: @fontSize;
+
+            &:hover {
+                border-bottom-color: #363636;
+                color: #363636;
+            }
         }
 
-        .k-tab__active-bar {
-            position: absolute;
-            height: 3px;
-            background-color: #409eff;
-            bottom: -1px;
-            left: 0;
-            z-index: 1;
-            transition: all .3s
+        &.is-active {
+            a {
+                border-bottom-color: #3c81df;
+                color: #3c81df;
+            }
         }
+      }
     }
-    .k-tabcontent__wrapper {
-        background: #fff;
-        padding: 15px 10px;
-        margin-bottom: 20px;
-        border-top: 0;
+    .tab-content {
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      margin: 10px;
+      flex: 1 1;
+    }
+    // TabPanel面板样式
+    .tab-pane {
+      user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      -webkit-user-select: text;
+      width: 100%;
+      flex: 1 1;
+      &.is-active {
+        transform: translateZ(0);
+      }
+      &[class*="leave-active"] {
         overflow: hidden;
-        .clearfix();
-        // 所有的content先默认隐藏
-        .k-tabContent {
-            display: none;
-        }
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: translateX(0);
+        transform: translateY(0);
+      }
     }
-}
-
-// 扁平化风格
-.k-tab__flat {
-    .k-tab-labels {
-        .k-tab-label {
+    &.is-layout-top {
+      flex-direction: column;
+    }
+    &.is-layout-bottom {
+      flex-direction: column-reverse;
+    }
+    &.is-layout-left {
+      flex-direction: row;
+      overflow-x: hidden;
+      overflow-y: auto;
+      .tab-list {
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: calc(100% / 5);
+        border-bottom: none;
+        li {
+            width: 100%;
+            a {
+              border-bottom: none;
+              border-right: 1px solid #dbdbdb;
+              margin-bottom: 0;
+              margin-right: -1px;
+              justify-content: flex-end;
+              &:hover {
+                border-right-color: @grey-darker;
+              }
+            }
+            &.is-active {
+              a {
+                border-right-color: @turquoise;
+              }
+            }
+        }
+      }
+    }
+    &.is-layout-right {
+      flex-direction: row-reverse;
+      overflow-x: hidden;
+      overflow-y: auto;
+      .tab-list {
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+        max-width: calc(100% / 5);
+        border-bottom: none;
+        border-left: 1px solid @grey-light;
+        li {
+          width: 100%;
+          a {
+            border-bottom: none;
+            border-left: 1px solid @grey-light;
             margin-bottom: 0;
-        }
-        .k-tab__active {
-            color: #409eff;
-            font-weight: 400;
-        }
-    }
-}
-
-// 选项卡式风格
-.k-tab__card {
-    .k-tab-labels {
-        .k-tab-label {
-            border: 1px solid #ddd;
             margin-left: -1px;
+            justify-content: flex-start;
+            &:hover {
+              border-left-color: @grey-darker;
+            }
+          }
+          &.is-active {
+            a {
+              border-left-color: @turquoise;
+            }
+          }
         }
-        .k-tab__active {
-            color: #409eff;
-            font-weight: 400;
-            border-bottom-color: transparent;
-        }
-        .k-tab__active-bar {
-            display: none !important;
+      }
+    }
+    // 卡片样式
+    &.is-card {
+        .tab-list {
+            li {
+                a {
+                    border: 1px solid transparent;
+                    border-radius: 3px 3px 0 0;
+                    padding-bottom: 5px;
+                    padding-top: 5px;
+                }
+                // 若处于激活状态
+                &.is-active {
+                    a {
+                        background-color: #fff;
+                        border-color: #dbdbdb;
+                        border-bottom-color: transparent!important;
+                        color: #3c81df;
+                    }
+                    
+                }
+            }
         }
     }
-    .k-tab-labels:first-child {
-        border-top-left-radius: 5px;
-    }
-}
+    // 带有边框的卡片样式
+    &.is-border-card {
+        border: 1px solid #dbdbdb;
+        // .common-box-shadow();
+        .tab-list {
+            background-color: #f5f7fa;
+            li {
+                a {
+                    border: 1px solid transparent;
+                    border-radius: 0;
+                    padding-bottom: 5px;
+                    padding-top: 5px;
+                    border-top-width: 0;
+                }
+                // 若处于激活状态
+                &.is-active {
+                    a {
+                        background-color: #fff;
+                        border-color: #dbdbdb;
+                        border-bottom-color: transparent;
+                        color: #3c81df;
+                    } 
+                }
+            }
+        }
+        // border-card样式下 Top标签位置调整
+        &.is-layout-top {
+            .tab-list {
+                li {
+                    a {
+                        margin-left: -1px;
+                    }
+                }
+            }
+        }
+        &.is-layout-bottom {
+            border: 1px solid #dbdbdb;
+            border-bottom-width: 0;
+            .tab-list {
+                border-top: 1px solid #dbdbdb;
+                li {
+                    a {
+                        margin-left: -1px;
+                        border: 1px solid transparent;
+                        border-radius: 0;
+                        padding-bottom: 5px;
+                        padding-top: 5px;
+                        border-top-width: 0;
+                        border-bottom-color: transparent;
+                        margin-top: -1px;
+                    }
+                    // 若处于激活状态
+                    &.is-active {
+                        a {
+                            background-color: #fff;
+                            border-color: #dbdbdb;
+                            border-top-color: transparent;
+                            color: #3c81df;
+                        } 
+                    }
+                }
+            }
+        }
+        // border-card样式下 Left标签位置调整
+        &.is-layout-left {
+            border: 1px solid #dbdbdb;
+            .tab-list {
+                border-right: 1px solid #dbdbdb;
+                li {
+                    a {
+                        border: 1px solid transparent;
+                        border-radius: 0;
+                        padding-bottom: 5px;
+                        // padding-top: 5px;
+                        border-left-width: 0;
+                        margin-top: -1px;
+                    }
+                    // 若处于激活状态
+                    &.is-active {
+                        a {
+                            background-color: #fff;
+                            border-color: #dbdbdb;
+                            border-right-color: transparent;
+                            border-bottom-width: transparent;
+                            color: #3c81df;
+                        } 
+                    }
+                }
+            }
+        }
 
-// 卡片化风格
-.k-tab__border-card {
-    border: 1px solid #ddd;
-    .common-box-shadow();
-    .k-tab-labels {
-        background-color: #f5f7fa;
-        border-bottom: 1px solid #e4e7ed;
-        .k-tab-label {
-            border: 1px solid #ddd;
-            border-top: none;
-            background-color: transparent;
-            margin-left: -1px;
-        }
-        .k-tab__active {
-            background-color: #FFF;
-            color: #409eff;
-            font-weight: 400;
-            border-bottom-color: transparent;
-        }
-        .k-tab__active-bar {
-            display: none !important;
+        &.is-layout-right {
+            border: 1px solid #dbdbdb;
+            .tab-list {
+                border-left: 1px solid #dbdbdb;
+                li {
+                    a {
+                        border: 1px solid transparent;
+                        border-radius: 0;
+                        padding-bottom: 5px;
+                        padding-top: 5px;
+                        margin-top: -1px;
+                        margin-right: -1px;
+                    }
+                    // 若处于激活状态
+                    &.is-active {
+                        a {
+                            background-color: #fff;
+                            border-color: #dbdbdb;
+                            border-left-color: transparent;
+                            border-bottom-width: transparent;
+                            color: #3c81df;
+                        } 
+                    }
+                }
+            }
         }
     }
-}
+  }
+  .is-slideshow{
+    .tab-content{
+      margin: 0;
+    }
+    .tab-list{
+      display: block;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      z-index: 15;
+      width: 60%;
+      padding-left: 0;
+      margin-left: -30%;
+      border: none;
+      text-align: center;
+      list-style: none;
+      li{
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 1px 2px;
+        text-indent: -999px;
+        cursor: pointer;
+        background-color: #000 \9;
+        background-color: rgba(0,0,0,0);
+        border: 1px solid #fff;
+        border-radius: 10px;
+        a{
+          border: none;
+        }
+        &.is-active{
+          background: #fff;
+          a{
+            /*background: #fff;*/
+          }
+        }
+      }
+    }
+  }

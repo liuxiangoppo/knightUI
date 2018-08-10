@@ -1,5 +1,5 @@
 .pagination{
-    font-size: 13px;
+    font-size: @fontSize;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -22,12 +22,17 @@
       flex-grow: 0;
       align-items: center;
       display: flex;
-      flex-grow: 1;
+      // flex-grow: 1;
       flex-shrink: 0;
       justify-content: center;
       list-style: none;
       li {
         margin: 0 2px;
+        a {
+          display: block;
+          min-width: 32px;
+          padding: 3px 8px;
+        }
       }
       i{
         line-height: 24px;
@@ -62,9 +67,27 @@
       }
     }
     .input{
+      box-sizing: border-box;
       display: inline-block;
       width: 45px;
       vertical-align: baseline;
+      -webkit-appearance: none;
+      align-items: center;
+      background-color: #fff;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+      color: #363636;
+      // display: inline-flex;
+      font-size: @fontSize;
+      height: 30px;
+      justify-content: flex-start;
+      line-height: 24px;
+      padding-left: 8px;
+      padding-right: 8px;
+      position: relative;
+      outline: none;
+      // vertical-align: top;
+      // box-shadow: inset 0 1px 2px hsla(0,0%,4%,.1);
     }
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {

@@ -7,6 +7,11 @@
 <script>
 export default {
   name: 'kBreadcrumb',
+  provide () {
+    return {
+      breadCrumb: this
+    }
+  },
   props: {
     separator: {
       default: '/',

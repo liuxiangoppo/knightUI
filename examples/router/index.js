@@ -185,6 +185,31 @@ export default new Router({
       path: '/popconfirm',
       name: 'popconfirm',
       component: r => require.ensure([], () => r(require('../docs/popconfirm.md')))
+    },
+    {
+      path: '/input',
+      name: 'input',
+      component: r => require.ensure([], () => r(require('../docs/input.md')))
+    },
+    {
+      path: '/checkbox',
+      name: 'checkbox',
+      component: r => require.ensure([], () => r(require('../docs/checkbox.md')))
+    },
+    {
+      path: '/radio',
+      name: 'radio',
+      component: r => require.ensure([], () => r(require('../docs/radio.md')))
+    },
+    {
+      path: '/select',
+      name: 'select',
+      component: r => require.ensure([], () => r(require('../docs/select.md')))
+    },
+    {
+      path: '/datepicker',
+      name: 'datepicker',
+      component: r => require.ensure([], () => r(require('../docs/datepicker.md')))
     }
   ]
 })

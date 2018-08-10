@@ -1,5 +1,3 @@
-const instances = {}
-
 const PopupManager = {
     // 作者的生日
     zIndex: 19900420,

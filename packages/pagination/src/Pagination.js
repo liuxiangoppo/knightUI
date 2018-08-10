@@ -111,8 +111,9 @@ export default {
         this.handleChangePage(page)
       }
     },
-    handlePageSizeChange (e) {
-      const pageSize = e.target.value
+    handlePageSizeChange (data) {
+      // 拿到的data中value的类型是个字符串 需要变换一下类型.
+      const pageSize = parseInt(data.value)
       this.interPageSize = pageSize
       // 计算总页数
       this.calcTotalPage(pageSize)
@@ -196,9 +197,12 @@ export default {
       )
       sizer = (
         <span class={`select ${sizeClass}`}>
-          <select onChange={this.handlePageSizeChange}>
+          {/* <select onChange={this.handlePageSizeChange}>
             {this._l(this.sizeOptions, option => <option value={option}>{option} 条/页</option>)}
-          </select>
+          </select> */}
+          <k-select v-model={this.interPageSize} on-select-change={this.handlePageSizeChange}>
+            {this._l(this.sizeOptions, option => <k-select-option value={option} label={option + '条/页'}></k-select-option>)}
+          </k-select>
         </span>
       )
 

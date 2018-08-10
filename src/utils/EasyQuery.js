@@ -227,9 +227,12 @@ class EasyDom {
      */
     getAttribute(attrName) {
         if (this._isNotEmpty()) {
-            this.selectors.forEach(item => {
-                item.getAttribute(attrName);
-            })
+            const selector = this.selectors[0]
+            if (attrName !== '') {
+                return selector.getAttribute(attrName);
+            } else {
+                return ''
+            }
         }
         return this;
     }
@@ -393,5 +396,42 @@ export default class EasyQuery {
             return true;
         });
         return flag;
+    }
+
+    /**
+     * 随机生成一个UUID
+     */
+    static generateUUID() {
+        const d = new Date().getTime();
+        const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            let r = (d + Math.random() * 16) % 16 | 0;
+            let d = Math.floor(d / 16);
+            return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        });
+        return uuid;
+    }
+
+    /**
+     * 清空数组
+     * @param {*} ary 
+     */
+    static empty(ary) {
+        return ary.splice(0, ary.length);
+    }
+
+    /**
+     * 判断参数是否为类数组
+     * @param {*} arrayLike 类数组
+     */
+    static isArrayLike(arrayLike) {
+        if (arrayLike && typeof arrayLike === 'object'
+            && isFinite(arrayLike.length)
+            && arrayLike.length >= 0
+            && arrayLike.length === Math.floor(arrayLike.length)
+            && arrayLike.length < 4294967296) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

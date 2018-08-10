@@ -1,40 +1,31 @@
-export default {
-    isEmpty(obj) {
-        if (obj === null) return true;
-        if (obj.length > 0) return false;
-        if (obj.length === 0) return true;
-        if (typeof obj !== 'object') return true;
-        let flag = true;
-        Object.keys(obj).every((key) => {
-            if (Object.prototype.hasOwnProperty.call(obj, key)) {
-                flag = false;
-                return false;
-            }
-            return true;
-        });
-        return flag;
-    },
+function S4() {
+    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+}
 
-    isFunction(obj) {
-        return !!(obj && obj.constructor && obj.call && obj.apply);
-    },
+export function guid() {
+    return S4();
+}
 
-    getScroll(target, top) {
-        if (typeof window === 'undefined') {
-            return 0;
-        }
+export function catIn(target, parent) {
+    let path = []
+    let parentNode = target
+    while (parentNode && parentNode !== document.body) {
+        path.push(parentNode)
+        parentNode = parentNode.parentNode
+    }
+    return path.indexOf(parent) !== -1
+}
 
-        const prop = top ? 'pageYOffset' : 'pageXOffset';
-        const method = top ? 'scrollTop' : 'scrollLeft';
-        const isWindow = target === window;
-
-        let ret = isWindow ? target[prop] : target[method];
-        // ie6,7,8 standard mode
-        if (isWindow && typeof ret !== 'number') {
-            ret = window.document.documentElement[method];
-        }
-
-        return ret;
-    },
-
-};
+export function debounce(fn, delay) {
+    // 维护一个 timer
+    let timer = null
+    return function () {
+        // 通过 ‘this’ 和 ‘arguments’ 获取函数的作用域和变量
+        let context = this
+        let args = arguments
+        clearTimeout(timer)
+        timer = setTimeout(function () {
+            fn.apply(context, args)
+        }, delay)
+    }
+}

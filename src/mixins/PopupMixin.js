@@ -90,7 +90,7 @@ const PopperMixin = {
         rightBottom: 'right-start'
       }
       const placement = placementMapper[this.placement] ? placementMapper[this.placement] : 'bottom'
-      const reference = this.reference = this.reference || this.$el.children[0]
+      const reference = this.reference = this.reference || this.$el
       const popperEl = this.$refs.popper
       const options = {
         placement
@@ -129,7 +129,11 @@ const PopperMixin = {
       } else {
         reference.addEventListener('click', this.handleClick)
         popper.addEventListener('click', this.showPopper)
-        document.documentElement.addEventListener('click', this.handleClick)
+        //document.documentElement.addEventListener('click', this.handleClick)
+        document.addEventListener('click', () => {
+          console.log('.')
+          this.hidePopper()
+        }, false)
       }
     },
     runPopper () {

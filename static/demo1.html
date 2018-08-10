@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <title>Vue.JS Grid</title>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="styles/index.processed.css">
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div style="width: 500px; height: 200px; overflow: hidden; border: 1px solid #ccc; position: relative;" v-on="{ load: setTableShadow, resize: setTableShadow }">
+            <div>
+                <div style="width: 500px; overflow: hidden;" ref="scrollHead1">
+                    <table cellspacing="0" cellpadding="0" border="0" style="width: 653px;" ref="scrollHead">
+                        <colgroup>
+                            <col v-for="(column, index) in columns2" :width="column.width">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th v-for="(column, index) in columns2">
+                                    {{ column.title || '' }}
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div style="width: 100px; position: absolute; top: 0; left: 0;  overflow-x: hidden; background: #fff;" :class="{'table-fixed-left-scroll': hasLeft}"
+                    class="table-fixed-left">
+                    <table cellspacing="0" cellpadding="0" border="0" style="width: 653px;">
+                        <colgroup>
+                            <col v-for="(column, index) in columns2" :width="column.width">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th v-for="(column, index) in columns2" :class="{'tdHidden': column.fixed!='left'}">
+                                    {{ column.title || '' }}
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div style="width: 100px; position: absolute; right: 0; top: 0; background: #fff;" :class=" {'table-fixed-right-scroll': hasRight}"
+                    class="table-fixed-right">
+                    <table cellspacing="0" cellpadding="0" border="0" style="width: 653px;">
+                        <colgroup>
+                            <col v-for="(column, index) in columns2" :width="column.width">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th v-for="(column, index) in columns2.concat().reverse()" :class="{'tdHidden': column.fixed!='right'}">
+                                    {{ column.title || '' }}
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div style="height:100%; overflow-y: auto; position: relative; overflow-x: hidden; border-top: 1px solid #ccc;">
+                <div style="overflow-x: auto" v-on:scroll="handleBodyScroll" ref="tableScroll">
+                    <table cellspacing="0" cellpadding="0" border="0" style="width: 653px;" ref="tableContent">
+                        <colgroup>
+                            <col v-for="(column, index) in columns2" :width="column.width">
+                        </colgroup>
+                        <tbody class="ivu-table-tbody">
+                            <tr v-for="entry in data4">
+                                <td v-for="(column, index) in columns2">
+                                    <span v-if="entry[column.key]">{{entry[column.key]}}</span>
+                                    <span v-else>
+                                        <button>编辑</button>
+                                        <button>复制</button>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="width: 100px; position: absolute; top: 0; left: 0;  overflow-x: hidden; background: #fff;" :class="{'table-fixed-left-scroll': hasLeft}"
+                    class="table-fixed-left">
+                    <table cellspacing="0" cellpadding="0" border="0" style="width: 653px;">
+                        <colgroup>
+                            <col v-for="(column, index) in columns2" :width="column.width" :class="{'tdHidden': column.fixed!='left'}">
+                        </colgroup>
+                        <tbody class="ivu-table-tbody">
+                            <tr v-for="entry in data4">
+                                <td v-for="(column, index) in columns2">
+                                    <span v-if="entry[column.key]">{{entry[column.key]}}</span>
+                                    <span v-else>
+                                        <button>编辑</button>
+                                        <button>复制</button>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="width: 100px; position: absolute; right: 0; top: 0; background: #fff;" :class="{'table-fixed-right-scroll': hasRight}"
+                    class="table-fixed-right">
+                    <table cellspacing="0" cellpadding="0" border="0" style="width: 653px;">
+                        <colgroup>
+                            <col v-for="(column, index) in columns2.concat().reverse()" :width="column.width">
+                        </colgroup>
+                        <tbody class="ivu-table-tbody">
+                            <tr v-for="entry in data4">
+                                <td v-for="(column, index) in columns2.concat().reverse()" :class="{'tdHidden': column.fixed!='right'}">
+                                    <span v-if="entry[column.key]">{{entry[column.key]}}</span>
+                                    <span v-else>
+                                        <button>编辑</button>
+                                        <button>复制</button>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/scripts/index.js"></script>
+</body>
+
+</html>

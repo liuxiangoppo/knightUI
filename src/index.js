@@ -60,6 +60,16 @@ import KProgressBar from 'packages/progressbar'
 // Popover
 import KPopover from 'packages/popover'
 import KPopconfirm from 'packages/popconfirm'
+import KInput from 'packages/input'
+import KRadio from 'packages/radio'
+import KCheckbox from 'packages/checkbox'
+import KFormItem from 'packages/form-item'
+import KForm from 'packages/form'
+import KRadioGroup from 'packages/radio-group'
+import KCheckboxGroup from 'packages/checkbox-group'
+import KSelect from 'packages/select'
+import KSelectOption from 'packages/select-item'
+import KDatePicker from 'packages/datepicker'
 const components = [
     // 导航菜单
     KMenu,
@@ -111,7 +121,17 @@ const components = [
     KCard,
     KProgressBar,
     KPopover,
-    KPopconfirm
+    KPopconfirm,
+    KInput,
+    KRadio,
+    KCheckbox,
+    KFormItem,
+    KForm,
+    KRadioGroup,
+    KCheckboxGroup,
+    KSelect,
+    KSelectOption,
+    KDatePicker
 ]
 
 const install = function (Vue) {
@@ -175,5 +195,15 @@ export default {
     KCard,
     KProgressBar,
     KPopover,
-    KPopconfirm
+    KPopconfirm,
+    KInput,
+    KRadio,
+    KCheckbox,
+    KFormItem,
+    KForm,
+    KRadioGroup,
+    KCheckboxGroup,
+    KSelect,
+    KSelectOption,
+    KDatePicker
 }

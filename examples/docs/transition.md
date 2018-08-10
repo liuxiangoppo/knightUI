@@ -345,3 +345,7 @@
 
 ```
 :::
+
+<k-info mode="flat" title="使用方法">
+  直接将上述过渡动画名称赋给transition组件的name属性
+</k-info>

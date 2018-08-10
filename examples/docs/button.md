@@ -90,11 +90,11 @@
 
 ## 带有边框的按钮
 <div class="demo-block">
-  <button class="button is-primary is-border">Primary</button>
-  <button class="button is-success is-border">Success</button>
-  <button class="button is-warning is-border">Warning</button>
-  <button class="button is-danger is-border">Danger</button>
-  <button class="button is-info is-border">Info</button>
+  <button class="button is-primary is-border">优先</button>
+  <button class="button is-success is-border">成功</button>
+  <button class="button is-warning is-border">警告</button>
+  <button class="button is-danger is-border">危险</button>
+  <button class="button is-info is-border">信息</button>
 </div>
 
 ::: demo
@@ -110,6 +110,47 @@
 ```
 :::
 
+## 朴素的按钮
+<div class="demo-block">
+  <button class="button is-plain">朴素的按钮</button>
+  <button class="button is-primary is-plain">朴素的按钮</button>
+  <button class="button is-success is-plain">朴素的按钮</button>
+  <button class="button is-warning is-plain">朴素的按钮</button>
+  <button class="button is-danger is-plain">朴素的按钮</button>
+  <button class="button is-info is-plain">朴素的按钮</button>
+</div>
+
+::: demo
+``` html
+<button class="button is-plain">朴素的按钮</button>
+<button class="button is-primary is-plain">朴素的按钮</button>
+<button class="button is-success is-plain">朴素的按钮</button>
+<button class="button is-warning is-plain">朴素的按钮</button>
+<button class="button is-danger is-plain">朴素的按钮</button>
+<button class="button is-info is-plain">朴素的按钮</button>
+```
+:::
+
+## 块级按钮
+<div class="demo-block">
+ <button class="button is-block marginBottom10">块级按钮</button>
+ <button class="button is-primary is-block marginBottom10">块级按钮</button>
+ <button class="button is-info is-block marginBottom10">块级按钮</button>
+ <button class="button is-success is-block marginBottom10">块级按钮</button>
+ <button class="button is-warning is-block marginBottom10">块级按钮</button>
+ <button class="button is-danger is-block">块级按钮</button>
+</div>
+
+::: demo
+``` html
+<button class="button is-block marginBottom10">块级按钮</button>
+<button class="button is-primary is-block marginBottom10">块级按钮</button>
+<button class="button is-info is-block marginBottom10">块级按钮</button>
+<button class="button is-success is-block marginBottom10">块级按钮</button>
+<button class="button is-warning is-block marginBottom10">块级按钮</button>
+<button class="button is-danger is-block">块级按钮</button>
+```
+:::
 
 ## 不同尺寸的按钮
 可以设置不同的按钮尺寸

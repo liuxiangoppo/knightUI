@@ -1,0 +1,216 @@
+.k-form__inline {
+    .k-form-item {
+        display: inline-block;
+
+        .label {
+            float: none;
+            display: inline-block;
+            line-height: 30px;
+            box-sizing: border-box;
+        }
+        .k-form-item__content {
+            display: inline-block;
+            line-height: 30px;
+        }
+    }
+}
+.k-input-wrap {
+    -webkit-appearance: none;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #363636;
+    display: inline-flex;
+    font-size: @fontSize;
+    justify-content: flex-start;
+    position: relative;
+    vertical-align: top;
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    .k-input-icon {
+        padding: 0 8px 0 0;
+    }
+    // 禁用input
+    &.is-disabled {
+        opacity: 0.5;
+        .k-input__inner,.k-input__textarea{
+          cursor: not-allowed;
+        }
+        // .k-input__textarea {
+        //   cursor: not-allowed;
+        // }
+    }
+
+    &.is-primary {
+        &:hover {
+            border-color: @primary;
+          }
+    }
+    &.is-success {
+        &:hover {
+            border-color: @success;
+        }
+    }
+    &.is-danger {
+        &:hover {
+            border-color: @danger;
+        }
+    }
+    &.is-warning {
+        &:hover {
+            border-color: @warning;
+        }
+    }
+    &.is-info {
+        &:hover {
+            border-color: @info;
+        }
+    }
+
+    .k-input__inner,.k-input__textarea {
+        background-color: #fff;
+        background-image: none;
+        border: none;
+        border-radius: 3px;
+        height: 30px;
+        box-sizing: border-box;
+        color: #606266;
+        display: inline-block;
+        font-size: inherit;
+        outline: none;
+        padding: 0 8px;
+        width: 100%;
+        line-height: 24px;
+    }
+
+    .k-input__textarea {
+        height: auto;
+        // 禁止textarea横向拉伸 resize:vertical表示只能纵向拉伸 其余的值为:horizontal(允许横向拉伸)、both(都允许)
+        resize: vertical;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+.label {
+    color: #363636;
+    display: block;
+    font-weight: 700;
+
+    &:not(:last-child) {
+        margin-bottom: 5px;
+    }
+}
+.k-radio-group {
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.k-label-inline {
+    float: left;
+    line-height: 30px;
+}
+.k-form-item {
+    position: relative;
+    text-align: left;
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .k-form-item__content {
+        box-sizing: border-box;
+    }
+}
+.checkbox, .radio {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 16px;
+    position: relative;
+    vertical-align: top;
+}
+.checkbox input, .radio input {
+    cursor: pointer;
+}
+input[type=checkbox], input[type=radio] {
+    vertical-align: baseline;
+}
+
+.k-radio-wrap,.k-checkbox-wrap {
+    display: inline-block;
+    // height: 30px;
+    // line-height: 30px;
+    cursor: pointer;
+    
+    &.is-disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    .k-radio,.k-checkbox {
+        display: none;
+    }
+    .k-radio-input,.k-checkbox-input {
+        box-sizing: border-box;
+        background-color:#fff;
+        border:1px solid rgba(0,0,0,0.15);
+        border-radius:100%;
+        display:inline-block;
+        height:14px;
+        margin-top:-2px;
+        width:14px;
+        vertical-align: middle;
+    }
+    .k-checkbox-input {
+        border-radius: 0;
+        position: relative;
+        &::after {
+            transform: rotate(45deg) scaleY(0);
+        }
+    }
+    .k-checkbox-message {
+        &.is-label {
+            // margin-left: 5px;
+        }
+    }
+    // 在radio处于点击状态的时候 设置k-radio-input:after的样式
+    .k-radio:checked + .k-radio-input:after{
+        background-color:#57ad68;
+        border-radius:100%;
+        content:"";
+        display:block;
+        height:10px;
+        margin:1px;
+        width:10px;
+    }
+    // 复选框的半选状态
+    // .k-checkbox:checked + .k-checkbox-input:after{
+    //     background-color:#57ad68;
+    //     content:"";
+    //     display:block;
+    //     height:10px;
+    //     margin:1px;
+    //     width:10px;
+    //     border: 1px solid #fff;
+    // }
+    .k-checkbox:checked + .k-checkbox-input {
+        background-color: @primary;
+        &::after {
+            box-sizing: content-box;
+            content: "";
+            border: 1px solid #fff;
+            border-left: 0;
+            border-top: 0;
+            height: 7px;
+            width: 3px;
+            position: absolute;
+            left: 4px;
+            top: 1px;
+            transform: rotate(45deg) scaleY(1);
+            transition: transform .15s ease-in .05s;
+            transform-origin: center;
+        }
+    }
+}

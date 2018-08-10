@@ -8,20 +8,24 @@ export default {
     state: {
       type: Object,
       default () {}
-    }
+    },
+    // 是否反转
+    isReverse: false
   },
   data () {
-    return {}
+    return {
+      rows: []
+    }
   },
   computed: {
     cols () {
-      return this.$parent.columns
+      return this.$parent.columnFields
     }
   },
   watch: {
-    // cols(newVal) {
-    //   console.log(newVal);
-    // },
+    data (newVal) {
+      this.rows = newVal
+    }
   },
   methods: {
     handleToggleSelect (row, isSelect, index) {
@@ -38,25 +42,29 @@ export default {
     return (
       <tbody>
         {
-          this._l(this.data, (row, $index) => {
+          this._l(this.rows, (row, $index) => {
+            if (this.isReverse) {
+              row = Array.prototype.slice.call(row).reverse()
+            }
             const key = row[rowKey] ? row[rowKey] : `${pagination.current}-${$index}`
             const checked = selectedRowKeys.indexOf(key) >= 0
             return (
               <tr>
                 {
-                  this.checkable ? <th><checkbox checked={checked} key={key} change={value => this.handleToggleSelect(row, value, $index)}/></th> : ''
+                  this.checkable && !this.isReverse ? <th><k-checkbox checked={checked} input-id={key} input-name={key} onChange={value => this.handleToggleSelect(row, value, $index)}></k-checkbox></th> : ''
                 }
                 {
-                  this.showIndex ? <th>{$index + 1}</th> : ''
+                  this.showIndex && !this.isReverse ? <th>{$index + 1}</th> : ''
                 }
-                {this._l(this.cols, (column, cellIndex) => {
-                  if (!column.visible) return null
-                  return (
-                    <td key={`${$index}${cellIndex}`}>
-                      {column.renderCell.call(this._renderProxy, h, { row, column, $index, store: this.store, _self: this.context || this.$parent.$vnode.context })}
-                    </td>
-                  )
-                })}
+                {
+                  this._l(this.cols, (column, cellIndex) => {
+                    if (!column.visible) return null
+                    return (
+                      <td key={`${$index}${cellIndex}`} class={column.className}>
+                        {column.renderCell.call(this._renderProxy, h, { row, column, $index, store: this.store, _self: this.context || this.$parent.$vnode.context })}
+                      </td>
+                    )
+                  })}
               </tr>
             )
           })
